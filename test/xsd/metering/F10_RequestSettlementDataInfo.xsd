@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:v1"
+ xmlns:hdr="urn:fi:Datahub:mif:common:HDR_Header:elements:v1"
+ xmlns:pec="urn:fi:Datahub:mif:common:PEC_ProcessEnergyContext:elements:v1"
+ xmlns:elm="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:elements:v1"
+ xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+ targetNamespace="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.3.4.0">
+ <xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" schemaLocation="../common/oasis-200401-wss-wssecurity-utility-1.0.xsd"/> 
+<xs:import namespace="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:elements:v1" schemaLocation="elements/F10_RequestSettlementDataInfo_ElementTypes.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:common:HDR_Header:elements:v1" schemaLocation="../common/elements/HDR_Header_ElementTypes.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:common:PEC_ProcessEnergyContext:elements:v1" schemaLocation="../common/elements/PEC_ProcessEnergyContext_ElementTypes.xsd"/>
+<xs:element name="RequestSettlementDataInfoMessage" type="rsm:RequestSettlementDataInfoMessage_Type">
+</xs:element>
+<xs:complexType name="RequestSettlementDataInfoMessage_Type">
+<xs:sequence>
+<xs:element name="RequestSettlementDataInfo" type="rsm:RequestSettlementDataInfo_Type" minOccurs="1" maxOccurs="1"/>
+</xs:sequence>
+<xs:attribute ref="wsu:Id" use="optional"/>
+</xs:complexType>
+<xs:complexType name="RequestSettlementDataInfo_Type">
+<xs:sequence>
+<xs:element name="Header" type="hdr:Header_Type" minOccurs="1" maxOccurs="1"/>
+<xs:element name="ProcessEnergyContext" type="pec:ProcessEnergyContext_Type" minOccurs="1" maxOccurs="1"/>
+<xs:element name="Transaction" type="elm:RequestSettlementDataInfo_Type" minOccurs="1" maxOccurs="1"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

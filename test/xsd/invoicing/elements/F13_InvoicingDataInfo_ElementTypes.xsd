@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="InvoicingDataInfo_Type">
+<xsd:sequence>
+<xsd:element name="TransactionIdentification" type="rsm:TransactionIdentification_S36_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPoint" type="rsm:MeteringPoint_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="AuthorContract" type="rsm:AuthorContract_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="RecipientContract" type="rsm:RecipientContract_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AuthorPartyIdentification" type="rsm:AuthorPartyIdentification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="RecipientPartyIdentification" type="rsm:RecipientPartyIdentification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InvoicingPeriod" type="rsm:InvoicingPeriod_F13_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InvoicingRow" type="rsm:InvoicingRow_F13_Type" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoicingPeriod_F13_Type">
+<xsd:sequence>
+<xsd:element name="InvoiceIdentification" type="rsm:InvoiceIdentification_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InvoiceCreationDate" type="rsm:InvoiceCreationDate_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoicingRow_F13_Type">
+<xsd:sequence>
+<xsd:element name="RowIdentification" type="rsm:RowIdentification_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ProductIdentification" type="rsm:ProductIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductComponentIdentification" type="rsm:ProductComponentIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Price" type="rsm:Price_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PriceUnit" type="rsm:PriceUnit_S14_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PriceUnitCode" type="rsm:PriceUnitCode_S3_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Currency" type="rsm:Currency_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="TaxIncluded" type="rsm:TaxIncluded_S1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Volume" type="rsm:Volume_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="VolumeUnit" type="rsm:VolumeUnit_S14_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="VolumeUnitCode" type="rsm:VolumeUnitCode_S3_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Amount" type="rsm:Amount_F8_2_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Tax" type="rsm:Tax_F8_2_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataCustomerEvent_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentReference" type="rsm:OriginalBusinessDocumentReference_S36_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ConsumerInvolvedCustomerParty" type="rsm:ConsumerInvolvedCustomerParty_F01_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsumerInvolvedCustomerParty_F01_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_260_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="IdentificationType" type="rsm:IdentificationType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CustomerType" type="rsm:CustomerType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CustomerSubType" type="rsm:CustomerSubType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AlternateIdentification" type="rsm:AlternateIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="InformationRestriction" type="rsm:InformationRestriction_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Language" type="rsm:Language_S2_5_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S200_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="GivenName" type="rsm:GivenName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MiddleName" type="rsm:MiddleName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FamilyName" type="rsm:FamilyName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="DateOfBirth" type="rsm:DateOfBirth_D_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AdditionalCode" type="rsm:AdditionalCode_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Communication" type="rsm:Communication_F01_Type" minOccurs="0" maxOccurs="2"/>
+<xsd:element name="ConsumerInvolvedCustomerAddress" type="rsm:ConsumerInvolvedCustomerAddress_F01_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Communication_F01_Type">
+<xsd:sequence>
+<xsd:element name="CommunicationChannel" type="rsm:CommunicationChannel_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CompleteNumber" type="rsm:CompleteNumber_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsumerInvolvedCustomerAddress_F01_Type">
+<xsd:sequence>
+<xsd:element name="CareOf" type="rsm:CareOf_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Pobox" type="rsm:Pobox_S15_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

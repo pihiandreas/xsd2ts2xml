@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F20_ResponseMPList:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:query:F20_ResponseMPList:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="ResponseMPList_Type">
+<xsd:sequence>
+<xsd:element name="MeteringPointList" type="rsm:MeteringPointList_F20_Type" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointList_F20_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PhysicalStatusType" type="rsm:PhysicalStatusType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="RemoteConnectable" type="rsm:RemoteConnectable_S1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPointType" type="rsm:MeteringPointType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPointSubType" type="rsm:MeteringPointSubType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringTimeDivision" type="rsm:MeteringTimeDivision_S1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeterIdentification" type="rsm:MeterIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RelatedMeteringPoint" type="rsm:RelatedMeteringPoint_S90_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CommunityIdentification" type="rsm:CommunityIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CommunityName" type="rsm:CommunityName_S200_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Netting" type="rsm:Netting_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_F20_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPointAddress" type="rsm:MeteringPointAddress_F20_Type" minOccurs="1" maxOccurs="8"/>
+<xsd:element name="MPPositionMeteringPointGeographicalCoordinate" type="rsm:MPPositionMeteringPointGeographicalCoordinate_F20_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_F20_Type">
+<xsd:sequence>
+<xsd:element name="Name" type="rsm:Name_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Identification" type="rsm:Identification_S50_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Type" type="rsm:Type_S3_1_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointAddress_F20_Type">
+<xsd:sequence>
+<xsd:element name="Type" type="rsm:Type_S4_NFI_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="AddressFreeForm" type="rsm:AddressFreeForm_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Language" type="rsm:Language_S2_5_2_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MPPositionMeteringPointGeographicalCoordinate_F20_Type">
+<xsd:sequence>
+<xsd:element name="Latitude" type="rsm:Latitude_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Longitude" type="rsm:Longitude_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

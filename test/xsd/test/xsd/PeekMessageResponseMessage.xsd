@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsm="urn:fi:Datahub:mif:test:PeekMessageResponseMessage:v1" xmlns:abie="urn:fi:Datahub:mif:common:v1"  targetNamespace="urn:fi:Datahub:mif:test:PeekMessageResponseMessage:v1" 
+ xmlns:F01="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"
+ xmlns:E58="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:v1"
+ xmlns:F04="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:v1"
+ xmlns:F05="urn:fi:Datahub:mif:masterdata:F05_NotifyMPInfo:v1"
+ xmlns:F06="urn:fi:Datahub:mif:masterdata:F06_MasterDataContractEvent:v1"
+ xmlns:F18="urn:fi:Datahub:mif:masterdata:F18_MasterDataContractEvent:v1"
+ xmlns:E66="urn:fi:Datahub:mif:metering:E66_EnergyTimeSeries:v1"
+ xmlns:F07="urn:fi:Datahub:mif:metering:F07_RequestMeasuredData:v1"
+ xmlns:F09="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:v1"
+ xmlns:E31="urn:fi:Datahub:mif:metering:E31_EnergyTimeSeries:v1"
+ xmlns:F19="urn:fi:Datahub:mif:metering:F19_BalanceCorrectionData:v1"
+ xmlns:F11="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"
+ xmlns:F13="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"
+ xmlns:F15="urn:fi:Datahub:mif:masterdata:F15_AuthorizationEvent:v1"
+ xmlns:F16="urn:fi:Datahub:mif:query:F16_PartyInfo:v1"
+ xmlns:ACK="urn:fi:Datahub:mif:common:ACK_Acknowledgement:v1"
+ xmlns:E44="urn:fi:Datahub:mif:metering:E44_EnergyTimeSeries:v1"
+ xmlns:F22="urn:fi:Datahub:mif:masterdata:F22_MasterDataProductEvent:v1"
+ xmlns:F23="urn:fi:Datahub:mif:masterdata:F23_MasterDataProductEvent:v1"
+ xmlns:F25="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"
+ xmlns:F27="urn:fi:Datahub:mif:masterdata:F27_MasterDataContractEvent:v1"
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"  schemaLocation="../../masterdata/F01_MasterDataCustomerEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:v1"  schemaLocation="../../masterdata/E58_MasterDataMPEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:v1"  schemaLocation="../../masterdata/F04_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F05_NotifyMPInfo:v1"  schemaLocation="../../masterdata/F05_NotifyMPInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F06_MasterDataContractEvent:v1"  schemaLocation="../../masterdata/F06_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F18_MasterDataContractEvent:v1"  schemaLocation="../../masterdata/F18_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:E66_EnergyTimeSeries:v1"  schemaLocation="../../metering/E66_EnergyTimeSeries.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F07_RequestMeasuredData:v1"  schemaLocation="../../metering/F07_RequestMeasuredData.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:v1"  schemaLocation="../../masterdata/F09_RequestPowerSwitch.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:E31_EnergyTimeSeries:v1"  schemaLocation="../../metering/E31_EnergyTimeSeries.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F19_BalanceCorrectionData:v1"  schemaLocation="../../metering/F19_BalanceCorrectionData.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"  schemaLocation="../../masterdata/F11_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"  schemaLocation="../../invoicing/F13_InvoicingDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F15_AuthorizationEvent:v1"  schemaLocation="../../masterdata/F15_AuthorizationEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F16_PartyInfo:v1"  schemaLocation="../../query/F16_PartyInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:common:ACK_Acknowledgement:v1"  schemaLocation="../../common/ACK_Acknowledgement.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:E44_EnergyTimeSeries:v1"  schemaLocation="../../metering/E44_EnergyTimeSeries.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F22_MasterDataProductEvent:v1"  schemaLocation="../../masterdata/F22_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F23_MasterDataProductEvent:v1"  schemaLocation="../../masterdata/F23_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"  schemaLocation="../../metering/F25_EnergyTimeSeries.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F27_MasterDataContractEvent:v1"  schemaLocation="../../masterdata/F27_MasterDataContractEvent.xsd"/>
+<xs:element name="PeekResultDataSetMessage" type="rsm:PeekResultDataSetMessage_Type"/>
+<xs:complexType name="PeekResultDataSetMessage_Type">
+<xs:choice maxOccurs="1">
+<xs:element  ref="F01:MasterDataCustomerEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="E58:MasterDataMPEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F04:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F05:NotifyMPInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F06:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F18:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="E66:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F07:RequestMeasuredDataMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F09:RequestPowerSwitchMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="E31:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F19:BalanceCorrectionDataMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F11:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F13:InvoicingDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F15:AuthorizationEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F16:PartyInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="ACK:AcknowledgementMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="E44:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F22:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F23:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F25:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F27:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+</xs:choice> </xs:complexType>
+</xs:schema>

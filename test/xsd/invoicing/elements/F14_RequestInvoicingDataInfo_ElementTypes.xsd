@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:invoicing:F14_RequestInvoicingDataInfo:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:invoicing:F14_RequestInvoicingDataInfo:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="RequestInvoicingDataInfo_Type">
+<xsd:sequence>
+<xsd:element name="InvoicingPeriod" type="rsm:InvoicingPeriod_F14_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPoint" type="rsm:MeteringPoint_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="AuthorContract" type="rsm:AuthorContract_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RecipientContract" type="rsm:RecipientContract_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AuthorPartyIdentification" type="rsm:AuthorPartyIdentification_S13_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RecipientPartyIdentification" type="rsm:RecipientPartyIdentification_S13_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoicingPeriod_F14_Type">
+<xsd:sequence>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

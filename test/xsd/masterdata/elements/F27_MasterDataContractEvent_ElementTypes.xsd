@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F27_MasterDataContractEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F27_MasterDataContractEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataContractEvent_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentReference" type="rsm:OriginalBusinessDocumentReference_S36_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentSender" type="rsm:OriginalBusinessDocumentSender_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPointOfContract" type="rsm:MeteringPointOfContract_F27_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_F27_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MasterDataContract" type="rsm:MasterDataContract_F27_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointOfContract_F27_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_F27_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MasterDataContract_F27_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

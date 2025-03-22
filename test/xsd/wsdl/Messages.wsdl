@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions 
+ xmlns:ns1="urn:cms:b2b:v01"
+ xmlns:tns="urn:cms:b2b:service:v01"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/"
+ targetNamespace="urn:cms:b2b:service:v01">
+ <wsdl:types>
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:b2b="urn:cms:b2b:v01" targetNamespace="urn:cms:b2b:v01" elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+     <xs:complexType name="DequeueMessageRequest_Type">
+   <xs:sequence>
+    <xs:element name="DocumentReferenceNumber" type="b2b:DocumentReferenceNumber_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DequeueMessageResponse_Type"/>
+  <xs:complexType name="MessageContainer_Type">
+   <xs:sequence>
+    <xs:element name="Payload" type="b2b:Payload_Type"/>
+   </xs:sequence>
+   </xs:complexType>
+  <xs:complexType name="ResponseMessageContainer_Type">
+   <xs:sequence>
+    <xs:element name="DocumentReferenceNumber" type="b2b:DocumentReferenceNumber_Type"  minOccurs="0"/>
+    <xs:element name="Payload" type="b2b:ResponsePayload_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payload_Type">
+   <xs:sequence>
+    <xs:any processContents="skip" namespace="##any"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResponsePayload_Type">
+   <xs:sequence>
+    <xs:any processContents="skip" namespace="##any"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageDomains_Type">
+    <xs:sequence>
+      <xs:element name="MessageDomain" type="b2b:MessageDomain_Type" minOccurs="1" maxOccurs="6"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeekMessageRequest_Type">
+   <xs:sequence>
+    <xs:element name="MessageDomains" type="b2b:MessageDomains_Type" minOccurs="0"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PeekMessageResponse_Type">
+   <xs:sequence>
+    <xs:element name="MessageContainer" type="b2b:ResponseMessageContainer_Type" minOccurs="0"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendMessageRequest_Type">
+   <xs:sequence>
+     <xs:element name="MessageContainer" type="b2b:MessageContainer_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SendMessageResponse_Type">
+   <xs:sequence>
+    <xs:element name="DocumentReferenceNumber" type="b2b:DocumentReferenceNumber_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProcessMessageRequest_Type">
+   <xs:sequence>
+    <xs:element name="MessageContainer" type="b2b:MessageContainer_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProcessMessageResponse_Type">
+   <xs:sequence>
+     <xs:element name="MessageContainer" type="b2b:ResponseMessageContainer_Type"/>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CMSFault_Type">
+    <xs:sequence>
+     <xs:element name="ErrorCode" type="b2b:ErrorCode_Type"/>
+     <xs:element name="ErrorIdentification" type="b2b:ErrorIdentification_Type" minOccurs="0"/>
+     <xs:element name="ErrorDetails" type="b2b:ErrorDetails_Type" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DequeueMessageRequest"  type="b2b:DequeueMessageRequest_Type"/>
+  <xs:element name="DequeueMessageResponse" type="b2b:DequeueMessageResponse_Type"/>
+  <xs:element name="PeekMessageRequest"     type="b2b:PeekMessageRequest_Type"/>
+  <xs:element name="PeekMessageResponse"    type="b2b:PeekMessageResponse_Type"/>
+  <xs:element name="ProcessMessageRequest"  type="b2b:ProcessMessageRequest_Type"/>
+  <xs:element name="ProcessMessageResponse" type="b2b:ProcessMessageResponse_Type"/>
+  <xs:element name="SendMessageRequest"     type="b2b:SendMessageRequest_Type"/>
+  <xs:element name="SendMessageResponse"    type="b2b:SendMessageResponse_Type"/>
+  <xs:element name="CMSFault"     type="b2b:CMSFault_Type"/>
+  <xs:simpleType name="DocumentReferenceNumber_Type">
+   <xs:restriction base="xs:string">
+    <xs:maxLength value="36"/>
+   </xs:restriction>
+  </xs:simpleType>
+<xs:simpleType name="MessageDomain_Type">
+<xs:restriction base="xs:string">
+<xs:minLength value="4"/>
+<xs:maxLength value="4"/>
+<xs:enumeration value="BB01"/>
+<xs:enumeration value="BB02"/>
+<xs:enumeration value="BB03"/>
+<xs:enumeration value="BB04"/>
+<xs:enumeration value="BB05"/>
+<xs:enumeration value="BB06"/>
+</xs:restriction>
+</xs:simpleType>
+        <xs:simpleType name="ErrorCode_Type">
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+         <xs:simpleType name="ErrorDetails_Type">
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+         <xs:simpleType name="ErrorIdentification_Type">
+            <xs:restriction base="xs:string"/>
+         </xs:simpleType>
+ </xs:schema>
+ </wsdl:types>
+ <wsdl:message name="SendMessageRequest">
+  <wsdl:part name="parameters" element="ns1:SendMessageRequest"/>
+ </wsdl:message>
+ <wsdl:message name="SendMessageResponse">
+  <wsdl:part name="parameters" element="ns1:SendMessageResponse"/>
+ </wsdl:message>
+ <wsdl:message name="ProcessMessageRequest">
+  <wsdl:part name="parameters" element="ns1:ProcessMessageRequest"/>
+ </wsdl:message>
+ <wsdl:message name="ProcessMessageResponse">
+  <wsdl:part name="parameters" element="ns1:ProcessMessageResponse"/>
+ </wsdl:message>
+ <wsdl:message name="PeekMessageRequest">
+  <wsdl:part name="parameters" element="ns1:PeekMessageRequest"/>
+ </wsdl:message>
+ <wsdl:message name="PeekMessageResponse">
+  <wsdl:part name="parameters" element="ns1:PeekMessageResponse"/>
+ </wsdl:message>
+ <wsdl:message name="DequeueMessageRequest">
+  <wsdl:part name="parameters" element="ns1:DequeueMessageRequest"/>
+ </wsdl:message>
+ <wsdl:message name="DequeueMessageResponse">
+  <wsdl:part name="parameters" element="ns1:DequeueMessageResponse"/>
+ </wsdl:message>
+   <wsdl:message name="Fault">
+      <wsdl:part name="fault" element="ns1:CMSFault"/>
+   </wsdl:message>
+ <wsdl:portType name="marketMessagingB2BInboundServiceV01PortType">
+  <wsdl:operation name="sendMessage">
+   <wsdl:input message="tns:SendMessageRequest"/>
+   <wsdl:output message="tns:SendMessageResponse"/>
+   <wsdl:fault name="fault" message="tns:Fault"/>
+  </wsdl:operation>
+  <wsdl:operation name="processMessage">
+   <wsdl:input message="tns:ProcessMessageRequest"/>
+   <wsdl:output message="tns:ProcessMessageResponse"/>
+   <wsdl:fault name="fault" message="tns:Fault"/>
+  </wsdl:operation>
+  <wsdl:operation name="peekMessage">
+   <wsdl:input message="tns:PeekMessageRequest"/>
+   <wsdl:output message="tns:PeekMessageResponse"/>
+   <wsdl:fault name="fault" message="tns:Fault"/>
+  </wsdl:operation>
+  <wsdl:operation name="dequeueMessage">
+   <wsdl:input message="tns:DequeueMessageRequest"/>
+   <wsdl:output message="tns:DequeueMessageResponse"/>
+   <wsdl:fault name="fault" message="tns:Fault"/>
+  </wsdl:operation>
+ </wsdl:portType>
+ <wsdl:binding name="marketMessagingB2BInboundServiceV01HTTPEndpointBinding" type="tns:marketMessagingB2BInboundServiceV01PortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <wsdl:operation name="sendMessage">
+   <soap:operation soapAction="sendMessage" style="document"/>
+   <wsdl:input>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:output>
+   <wsdl:fault name="fault">
+    <soap:fault name="fault" use="literal"/>
+   </wsdl:fault>
+  </wsdl:operation>
+  <wsdl:operation name="processMessage">
+   <soap:operation soapAction="processMessage" style="document"/>
+   <wsdl:input>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:output>
+   <wsdl:fault name="fault">
+    <soap:fault name="fault" use="literal"/>
+   </wsdl:fault>
+  </wsdl:operation>
+  <wsdl:operation name="peekMessage">
+   <soap:operation soapAction="peekMessage" style="document"/>
+   <wsdl:input>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:output>
+   <wsdl:fault name="fault">
+    <soap:fault name="fault" use="literal"/>
+   </wsdl:fault>
+  </wsdl:operation>
+  <wsdl:operation name="dequeueMessage">
+   <soap:operation soapAction="dequeueMessage" style="document"/>
+   <wsdl:input>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:input>
+   <wsdl:output>
+    <soap:body parts="parameters" use="literal"/>
+   </wsdl:output>
+   <wsdl:fault name="fault">
+    <soap:fault name="fault" use="literal"/>
+   </wsdl:fault>
+  </wsdl:operation>
+ </wsdl:binding>
+ <wsdl:service name="marketMessagingB2BInboundServiceV01">
+<wsdl:port name="marketMessagingB2BInboundServiceV01HTTPEndpoint" binding="tns:marketMessagingB2BInboundServiceV01HTTPEndpointBinding">
+<soap:address location="https://localhost:1234/soap/FGR?organisationUser=MyOrganisationB2BUser"/>
+  </wsdl:port>
+ </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,2892 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"  elementFormDefault="qualified"  attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:simpleType name="StartOfOccurrence_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OriginalBusinessDocumentReference_S36_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="36"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Description_S150_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="150"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S50_260_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="IdentificationType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AA01"/>
+<xsd:enumeration value="AA03"/>
+<xsd:enumeration value="AA04"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CustomerType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AB01"/>
+<xsd:enumeration value="AB02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CustomerSubType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BF01"/>
+<xsd:enumeration value="BF02"/>
+<xsd:enumeration value="BF03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AlternateIdentification_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InformationRestriction_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Language_S2_5_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="2"/>
+<xsd:enumeration value="fi"/>
+<xsd:enumeration value="en"/>
+<xsd:enumeration value="sv"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Name_S200_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="200"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="GivenName_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MiddleName_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FamilyName_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DateOfBirth_D_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:pattern value="(\d{0})|(\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01]))"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AdditionalCode_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CommunicationChannel_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AD01"/>
+<xsd:enumeration value="AD02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CompleteNumber_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CareOf_S150_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="150"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="StreetName_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="BuildingNumber_S10_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FloorIdentification_S10_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RoomIdentification_S10_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Postcode_S10_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Pobox_S15_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="15"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CityName_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CountryCode_S2_5_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="2"/>
+<xsd:enumeration value="AD"/>
+<xsd:enumeration value="AE"/>
+<xsd:enumeration value="AF"/>
+<xsd:enumeration value="AG"/>
+<xsd:enumeration value="AI"/>
+<xsd:enumeration value="AL"/>
+<xsd:enumeration value="AM"/>
+<xsd:enumeration value="AO"/>
+<xsd:enumeration value="AQ"/>
+<xsd:enumeration value="AR"/>
+<xsd:enumeration value="AS"/>
+<xsd:enumeration value="AT"/>
+<xsd:enumeration value="AU"/>
+<xsd:enumeration value="AW"/>
+<xsd:enumeration value="AX"/>
+<xsd:enumeration value="AZ"/>
+<xsd:enumeration value="BA"/>
+<xsd:enumeration value="BB"/>
+<xsd:enumeration value="BD"/>
+<xsd:enumeration value="BE"/>
+<xsd:enumeration value="BF"/>
+<xsd:enumeration value="BG"/>
+<xsd:enumeration value="BH"/>
+<xsd:enumeration value="BI"/>
+<xsd:enumeration value="BJ"/>
+<xsd:enumeration value="BL"/>
+<xsd:enumeration value="BM"/>
+<xsd:enumeration value="BN"/>
+<xsd:enumeration value="BO"/>
+<xsd:enumeration value="BQ"/>
+<xsd:enumeration value="BR"/>
+<xsd:enumeration value="BS"/>
+<xsd:enumeration value="BT"/>
+<xsd:enumeration value="BV"/>
+<xsd:enumeration value="BW"/>
+<xsd:enumeration value="BY"/>
+<xsd:enumeration value="BZ"/>
+<xsd:enumeration value="CA"/>
+<xsd:enumeration value="CC"/>
+<xsd:enumeration value="CD"/>
+<xsd:enumeration value="CF"/>
+<xsd:enumeration value="CG"/>
+<xsd:enumeration value="CH"/>
+<xsd:enumeration value="CI"/>
+<xsd:enumeration value="CK"/>
+<xsd:enumeration value="CL"/>
+<xsd:enumeration value="CM"/>
+<xsd:enumeration value="CN"/>
+<xsd:enumeration value="CO"/>
+<xsd:enumeration value="CR"/>
+<xsd:enumeration value="CU"/>
+<xsd:enumeration value="CV"/>
+<xsd:enumeration value="CW"/>
+<xsd:enumeration value="CX"/>
+<xsd:enumeration value="CY"/>
+<xsd:enumeration value="CZ"/>
+<xsd:enumeration value="DE"/>
+<xsd:enumeration value="DJ"/>
+<xsd:enumeration value="DK"/>
+<xsd:enumeration value="DM"/>
+<xsd:enumeration value="DO"/>
+<xsd:enumeration value="DZ"/>
+<xsd:enumeration value="EC"/>
+<xsd:enumeration value="EE"/>
+<xsd:enumeration value="EG"/>
+<xsd:enumeration value="EH"/>
+<xsd:enumeration value="ER"/>
+<xsd:enumeration value="ES"/>
+<xsd:enumeration value="ET"/>
+<xsd:enumeration value="FI"/>
+<xsd:enumeration value="FJ"/>
+<xsd:enumeration value="FK"/>
+<xsd:enumeration value="FM"/>
+<xsd:enumeration value="FO"/>
+<xsd:enumeration value="FR"/>
+<xsd:enumeration value="GA"/>
+<xsd:enumeration value="GB"/>
+<xsd:enumeration value="GD"/>
+<xsd:enumeration value="GE"/>
+<xsd:enumeration value="GF"/>
+<xsd:enumeration value="GG"/>
+<xsd:enumeration value="GH"/>
+<xsd:enumeration value="GI"/>
+<xsd:enumeration value="GL"/>
+<xsd:enumeration value="GM"/>
+<xsd:enumeration value="GN"/>
+<xsd:enumeration value="GP"/>
+<xsd:enumeration value="GQ"/>
+<xsd:enumeration value="GR"/>
+<xsd:enumeration value="GS"/>
+<xsd:enumeration value="GT"/>
+<xsd:enumeration value="GU"/>
+<xsd:enumeration value="GW"/>
+<xsd:enumeration value="GY"/>
+<xsd:enumeration value="HK"/>
+<xsd:enumeration value="HM"/>
+<xsd:enumeration value="HN"/>
+<xsd:enumeration value="HR"/>
+<xsd:enumeration value="HT"/>
+<xsd:enumeration value="HU"/>
+<xsd:enumeration value="ID"/>
+<xsd:enumeration value="IE"/>
+<xsd:enumeration value="IL"/>
+<xsd:enumeration value="IM"/>
+<xsd:enumeration value="IN"/>
+<xsd:enumeration value="IO"/>
+<xsd:enumeration value="IQ"/>
+<xsd:enumeration value="IR"/>
+<xsd:enumeration value="IS"/>
+<xsd:enumeration value="IT"/>
+<xsd:enumeration value="JE"/>
+<xsd:enumeration value="JM"/>
+<xsd:enumeration value="JO"/>
+<xsd:enumeration value="JP"/>
+<xsd:enumeration value="KE"/>
+<xsd:enumeration value="KG"/>
+<xsd:enumeration value="KH"/>
+<xsd:enumeration value="KI"/>
+<xsd:enumeration value="KM"/>
+<xsd:enumeration value="KN"/>
+<xsd:enumeration value="KP"/>
+<xsd:enumeration value="KR"/>
+<xsd:enumeration value="KW"/>
+<xsd:enumeration value="KY"/>
+<xsd:enumeration value="KZ"/>
+<xsd:enumeration value="LA"/>
+<xsd:enumeration value="LB"/>
+<xsd:enumeration value="LC"/>
+<xsd:enumeration value="LI"/>
+<xsd:enumeration value="LK"/>
+<xsd:enumeration value="LR"/>
+<xsd:enumeration value="LS"/>
+<xsd:enumeration value="LT"/>
+<xsd:enumeration value="LU"/>
+<xsd:enumeration value="LV"/>
+<xsd:enumeration value="LY"/>
+<xsd:enumeration value="MA"/>
+<xsd:enumeration value="MC"/>
+<xsd:enumeration value="MD"/>
+<xsd:enumeration value="ME"/>
+<xsd:enumeration value="MF"/>
+<xsd:enumeration value="MG"/>
+<xsd:enumeration value="MH"/>
+<xsd:enumeration value="MK"/>
+<xsd:enumeration value="ML"/>
+<xsd:enumeration value="MM"/>
+<xsd:enumeration value="MN"/>
+<xsd:enumeration value="MO"/>
+<xsd:enumeration value="MP"/>
+<xsd:enumeration value="MQ"/>
+<xsd:enumeration value="MR"/>
+<xsd:enumeration value="MS"/>
+<xsd:enumeration value="MT"/>
+<xsd:enumeration value="MU"/>
+<xsd:enumeration value="MV"/>
+<xsd:enumeration value="MW"/>
+<xsd:enumeration value="MX"/>
+<xsd:enumeration value="MY"/>
+<xsd:enumeration value="MZ"/>
+<xsd:enumeration value="NA"/>
+<xsd:enumeration value="NC"/>
+<xsd:enumeration value="NE"/>
+<xsd:enumeration value="NF"/>
+<xsd:enumeration value="NG"/>
+<xsd:enumeration value="NI"/>
+<xsd:enumeration value="NL"/>
+<xsd:enumeration value="NO"/>
+<xsd:enumeration value="NP"/>
+<xsd:enumeration value="NR"/>
+<xsd:enumeration value="NU"/>
+<xsd:enumeration value="NZ"/>
+<xsd:enumeration value="OM"/>
+<xsd:enumeration value="PA"/>
+<xsd:enumeration value="PE"/>
+<xsd:enumeration value="PF"/>
+<xsd:enumeration value="PG"/>
+<xsd:enumeration value="PH"/>
+<xsd:enumeration value="PK"/>
+<xsd:enumeration value="PL"/>
+<xsd:enumeration value="PM"/>
+<xsd:enumeration value="PN"/>
+<xsd:enumeration value="PR"/>
+<xsd:enumeration value="PS"/>
+<xsd:enumeration value="PT"/>
+<xsd:enumeration value="PW"/>
+<xsd:enumeration value="PY"/>
+<xsd:enumeration value="QA"/>
+<xsd:enumeration value="RE"/>
+<xsd:enumeration value="RO"/>
+<xsd:enumeration value="RS"/>
+<xsd:enumeration value="RU"/>
+<xsd:enumeration value="RW"/>
+<xsd:enumeration value="SA"/>
+<xsd:enumeration value="SB"/>
+<xsd:enumeration value="SC"/>
+<xsd:enumeration value="SD"/>
+<xsd:enumeration value="SE"/>
+<xsd:enumeration value="SG"/>
+<xsd:enumeration value="SH"/>
+<xsd:enumeration value="SI"/>
+<xsd:enumeration value="SJ"/>
+<xsd:enumeration value="SK"/>
+<xsd:enumeration value="SL"/>
+<xsd:enumeration value="SM"/>
+<xsd:enumeration value="SN"/>
+<xsd:enumeration value="SO"/>
+<xsd:enumeration value="SR"/>
+<xsd:enumeration value="SS"/>
+<xsd:enumeration value="ST"/>
+<xsd:enumeration value="SV"/>
+<xsd:enumeration value="SX"/>
+<xsd:enumeration value="SY"/>
+<xsd:enumeration value="SZ"/>
+<xsd:enumeration value="TC"/>
+<xsd:enumeration value="TD"/>
+<xsd:enumeration value="TF"/>
+<xsd:enumeration value="TG"/>
+<xsd:enumeration value="TH"/>
+<xsd:enumeration value="TJ"/>
+<xsd:enumeration value="TK"/>
+<xsd:enumeration value="TL"/>
+<xsd:enumeration value="TM"/>
+<xsd:enumeration value="TN"/>
+<xsd:enumeration value="TO"/>
+<xsd:enumeration value="TR"/>
+<xsd:enumeration value="TT"/>
+<xsd:enumeration value="TV"/>
+<xsd:enumeration value="TW"/>
+<xsd:enumeration value="TZ"/>
+<xsd:enumeration value="UA"/>
+<xsd:enumeration value="UG"/>
+<xsd:enumeration value="UM"/>
+<xsd:enumeration value="US"/>
+<xsd:enumeration value="UY"/>
+<xsd:enumeration value="UZ"/>
+<xsd:enumeration value="VA"/>
+<xsd:enumeration value="VC"/>
+<xsd:enumeration value="VE"/>
+<xsd:enumeration value="VG"/>
+<xsd:enumeration value="VI"/>
+<xsd:enumeration value="VN"/>
+<xsd:enumeration value="VU"/>
+<xsd:enumeration value="WF"/>
+<xsd:enumeration value="WS"/>
+<xsd:enumeration value="YE"/>
+<xsd:enumeration value="YT"/>
+<xsd:enumeration value="ZA"/>
+<xsd:enumeration value="ZM"/>
+<xsd:enumeration value="ZW"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AddressFreeForm_S150_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="150"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeterIdentification_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AG01"/>
+<xsd:enumeration value="AG02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointSubType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AQ01"/>
+<xsd:enumeration value="AQ02"/>
+<xsd:enumeration value="AQ03"/>
+<xsd:enumeration value="AQ04"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RelatedMeteringPoint_S90_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PhysicalStatusType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AE01"/>
+<xsd:enumeration value="AE02"/>
+<xsd:enumeration value="AE03"/>
+<xsd:enumeration value="AE04"/>
+<xsd:enumeration value="AE05"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RemoteConnectable_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringTimeDivision_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="1"/>
+<xsd:enumeration value="2"/>
+<xsd:enumeration value="3"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CommunityIdentification_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CommunityName_S200_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="200"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Netting_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Name_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S50_305_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Type_S3_1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="Z01"/>
+<xsd:enumeration value="Z03"/>
+<xsd:enumeration value="Z04"/>
+<xsd:enumeration value="Z05"/>
+<xsd:enumeration value="Z06"/>
+<xsd:enumeration value="Z07"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Type_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AF01"/>
+<xsd:enumeration value="AF02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="StreetName_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Postcode_S10_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CityName_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CountryCode_S2_5_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="2"/>
+<xsd:enumeration value="AX"/>
+<xsd:enumeration value="FI"/>
+<xsd:enumeration value="NO"/>
+<xsd:enumeration value="RU"/>
+<xsd:enumeration value="SE"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Language_S2_5_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="2"/>
+<xsd:enumeration value="fi"/>
+<xsd:enumeration value="sv"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Latitude_S10_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Longitude_S10_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OriginalBusinessDocumentSender_S13_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UpdateReason_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BM02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RemoteReadable_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringMethod_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="E13"/>
+<xsd:enumeration value="E14"/>
+<xsd:enumeration value="E16"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ResolutionDuration_S25_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT15M"/>
+<xsd:enumeration value="PT1H"/>
+<xsd:enumeration value="P1D"/>
+<xsd:enumeration value="P1M"/>
+<xsd:enumeration value="P1Y"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UserGroup_S4_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="4"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="HeatingMethodType_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FuseSize_S10_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContractedConnectionCapacity_F8_2_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TaxCategory_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+<xsd:enumeration value="2"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeterTimeFrame_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="E10"/>
+<xsd:enumeration value="E11"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Total_I9_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="999999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Name_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Timing_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Limits_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MaxPower_F8_2_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UnitType_S5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="5"/>
+<xsd:enumeration value="W"/>
+<xsd:enumeration value="kW"/>
+<xsd:enumeration value="MW"/>
+<xsd:enumeration value="GW"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Name_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Type_S4_NFI_3_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BH01"/>
+<xsd:enumeration value="BH02"/>
+<xsd:enumeration value="BH03"/>
+<xsd:enumeration value="BH04"/>
+<xsd:enumeration value="BH05"/>
+<xsd:enumeration value="BH06"/>
+<xsd:enumeration value="BH07"/>
+<xsd:enumeration value="BH08"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Capacity_F8_2_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UnitType_S5_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="5"/>
+<xsd:enumeration value="Wh"/>
+<xsd:enumeration value="kWh"/>
+<xsd:enumeration value="MWh"/>
+<xsd:enumeration value="GWh"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MaxCapacity_F8_2_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MaxCapacityUnitType_S5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="5"/>
+<xsd:enumeration value="W"/>
+<xsd:enumeration value="kW"/>
+<xsd:enumeration value="MW"/>
+<xsd:enumeration value="GW"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Type_S10_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="StartOfOccurrence_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="IdentificationMP_S90_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ResolutionDuration_S25_8_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT15M"/>
+<xsd:enumeration value="PT1H"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ReactiveEnergy_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CustomerNote_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContactType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AC01"/>
+<xsd:enumeration value="AC02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Priority_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoicingChannel_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AI01"/>
+<xsd:enumeration value="AI02"/>
+<xsd:enumeration value="AI03"/>
+<xsd:enumeration value="AI04"/>
+<xsd:enumeration value="AI05"/>
+<xsd:enumeration value="AI06"/>
+<xsd:enumeration value="AI07"/>
+<xsd:enumeration value="AI08"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoicingMethod_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AH01"/>
+<xsd:enumeration value="AH02"/>
+<xsd:enumeration value="AH03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContractReason_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AT01"/>
+<xsd:enumeration value="AT02"/>
+<xsd:enumeration value="AT03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContractStart_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Reason_S4_NFI_1_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AN01"/>
+<xsd:enumeration value="AN02"/>
+<xsd:enumeration value="AN03"/>
+<xsd:enumeration value="AN04"/>
+<xsd:enumeration value="AN05"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EndOfOccurrence_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContractType_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="11"/>
+<xsd:enumeration value="12"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DeliveryContract_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TransferContractCode_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TimeLimited_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FixedContractStart_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FixedContractEnd_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NoticeDays_I4_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="9999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NoticeBasis_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NoticeStart_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NoticeEnd_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductCode_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S13_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NextContractStart_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyContractByCustomer_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AJ01"/>
+<xsd:enumeration value="AJ02"/>
+<xsd:enumeration value="AJ03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NextContractEnd_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TransferContractByCustomer_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AK01"/>
+<xsd:enumeration value="AK02"/>
+<xsd:enumeration value="AK03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TransferContractNeeded_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContractConfirm_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContactType_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AL01"/>
+<xsd:enumeration value="AL02"/>
+<xsd:enumeration value="AL03"/>
+<xsd:enumeration value="AL04"/>
+<xsd:enumeration value="AL05"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CompleteNumber_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ElectronicInvoiceTargetId_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ElectronicInvoiceAddress_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ElectronicInvoiceRouter_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AddressType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AM01"/>
+<xsd:enumeration value="AM02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Address_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PeriodStart_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PeriodStop_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EndOfOccurrence_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S50_260_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ReasonForCancel_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AR01"/>
+<xsd:enumeration value="AR02"/>
+<xsd:enumeration value="AR03"/>
+<xsd:enumeration value="AR05"/>
+<xsd:enumeration value="AR06"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Start_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UniqueIdentification_S36_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="36"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoiceRelevant_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ResolutionDuration_S25_1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT15M"/>
+<xsd:enumeration value="PT1H"/>
+<xsd:enumeration value="P1D"/>
+<xsd:enumeration value="P1M"/>
+<xsd:enumeration value="P1Y"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="End_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S18_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="18"/>
+<xsd:enumeration value="8716867000030"/>
+<xsd:enumeration value="8716867000139"/>
+<xsd:enumeration value="8716867000146"/>
+<xsd:enumeration value="8716867000047"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UnitType_S6_3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="6"/>
+<xsd:enumeration value="Wh"/>
+<xsd:enumeration value="kWh"/>
+<xsd:enumeration value="MWh"/>
+<xsd:enumeration value="GWh"/>
+<xsd:enumeration value="varh"/>
+<xsd:enumeration value="kvarh"/>
+<xsd:enumeration value="Mvarh"/>
+<xsd:enumeration value="Gvarh"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointType_S3_1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="F01"/>
+<xsd:enumeration value="E18"/>
+<xsd:enumeration value="E20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_305_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SEQ_I6_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="QTY_F8_6_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="QQ_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="Z02"/>
+<xsd:enumeration value="99"/>
+<xsd:enumeration value="Z01"/>
+<xsd:enumeration value="Z04"/>
+<xsd:enumeration value="21"/>
+<xsd:enumeration value="56"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="QM_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPoint_S90_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringArea_S50_305_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ResolutionDuration_S25_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT15M"/>
+<xsd:enumeration value="PT1H"/>
+<xsd:enumeration value="P1D"/>
+<xsd:enumeration value="P1M"/>
+<xsd:enumeration value="P1Y"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoiceRelevant_S1_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointType_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="F01"/>
+<xsd:enumeration value="E18"/>
+<xsd:enumeration value="E20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AccountingPointType_S4_NFI_1_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AG01"/>
+<xsd:enumeration value="AG02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringArea_S50_305_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductIdentification_S50_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+<xsd:enumeration value="8716867000030"/>
+<xsd:enumeration value="8716867000047"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UnitType_S6_4_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="6"/>
+<xsd:enumeration value="kWh"/>
+<xsd:enumeration value="MWh"/>
+<xsd:enumeration value="kvarh"/>
+<xsd:enumeration value="Mvarh"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ConnectionStatus_S4_NFI_1_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AO01"/>
+<xsd:enumeration value="AO02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContactType_S4_NFI_3_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AL04"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="GivenName_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="FamilyName_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CommunicationChannel_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AD01"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Supplier_S13_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="BusinessType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BI01"/>
+<xsd:enumeration value="BI02"/>
+<xsd:enumeration value="BI03"/>
+<xsd:enumeration value="BI04"/>
+<xsd:enumeration value="BI05"/>
+<xsd:enumeration value="BI06"/>
+<xsd:enumeration value="BI07"/>
+<xsd:enumeration value="BI08"/>
+<xsd:enumeration value="BI09"/>
+<xsd:enumeration value="BI10"/>
+<xsd:enumeration value="BI11"/>
+<xsd:enumeration value="BI12"/>
+<xsd:enumeration value="BI13"/>
+<xsd:enumeration value="BI14"/>
+<xsd:enumeration value="BI15"/>
+<xsd:enumeration value="BI16"/>
+<xsd:enumeration value="BI17"/>
+<xsd:enumeration value="BI18"/>
+<xsd:enumeration value="BI19"/>
+<xsd:enumeration value="BI20"/>
+<xsd:enumeration value="BI21"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DataCorrectedOutsideBalanceWindow_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S36_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="36"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S18_1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="18"/>
+<xsd:enumeration value="8716867000030"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="UnitType_S6_5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="6"/>
+<xsd:enumeration value="Wh"/>
+<xsd:enumeration value="kWh"/>
+<xsd:enumeration value="MWh"/>
+<xsd:enumeration value="GWh"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointType_S3_3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="E17"/>
+<xsd:enumeration value="E18"/>
+<xsd:enumeration value="E20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SettlementMethodType_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="E01"/>
+<xsd:enumeration value="E02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductionUnitType_S3_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="Z06"/>
+<xsd:enumeration value="B14"/>
+<xsd:enumeration value="B16"/>
+<xsd:enumeration value="Z04"/>
+<xsd:enumeration value="Z05"/>
+<xsd:enumeration value="B20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_260_305_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="QTY_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="QQ_S3_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="Z02"/>
+<xsd:enumeration value="99"/>
+<xsd:enumeration value="Z01"/>
+<xsd:enumeration value="21"/>
+<xsd:enumeration value="56"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="BalanceCalculationDateTime_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DeviationType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AU01"/>
+<xsd:enumeration value="AU02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TotalAmount_F8_2_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="-99999999.99"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Energy_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPoint_S90_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DT_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OldQty_F8_6_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="NewQty_F8_6_Optional_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DeltaQty_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Price_F6_2_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="999999.99"/>
+<xsd:minInclusive value="-999999.99"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RD_S25_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT1H"/>
+<xsd:enumeration value="PT15M"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RS_S4_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BL01"/>
+<xsd:enumeration value="BL02"/>
+<xsd:enumeration value="BL03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyCommunityIdentification_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyCommunityName_S200_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="200"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SurplusMethod_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="SMA"/>
+<xsd:enumeration value="SMB"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AccountingPointIdentification_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Percentage_F2_2_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="IsSurplus_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OriginalBusinessDocumentReference_S36_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="36"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OriginalBusinessDocumentSender_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TransactionIdentification_S36_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="36"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AuthorContract_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RecipientContract_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AuthorPartyIdentification_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RecipientPartyIdentification_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoiceIdentification_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoiceCreationDate_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RowIdentification_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductIdentification_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductComponentIdentification_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Price_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceUnit_S14_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="14"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceUnitCode_S3_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="3"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Currency_S10_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TaxIncluded_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Volume_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="VolumeUnit_S14_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="14"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="VolumeUnitCode_S3_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="3"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Amount_F8_2_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="-99999999.99"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Tax_F8_2_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="2"/>
+<xsd:maxInclusive value="99999999.99"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AuthorContract_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="AuthorPartyIdentification_S13_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RecipientPartyIdentification_S13_9_Optional_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Reason_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AP01"/>
+<xsd:enumeration value="AP02"/>
+<xsd:enumeration value="AP03"/>
+<xsd:enumeration value="AP04"/>
+<xsd:enumeration value="AP05"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PartyIdentification_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PartyType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AS01"/>
+<xsd:enumeration value="AS02"/>
+<xsd:enumeration value="AS03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OrganizationStatus_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AW01"/>
+<xsd:enumeration value="AW02"/>
+<xsd:enumeration value="AW03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PartyId_S16_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="16"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PartyName_S200_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="200"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoicingChannel_S4_NFI_2_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="AI01"/>
+<xsd:enumeration value="AI02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CountryCode_S2_5_3_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="2"/>
+<xsd:enumeration value="DK"/>
+<xsd:enumeration value="EE"/>
+<xsd:enumeration value="FI"/>
+<xsd:enumeration value="NO"/>
+<xsd:enumeration value="SE"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ConsolidateInvoicing_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ContactType_S4_NFI_4_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BK01"/>
+<xsd:enumeration value="BK02"/>
+<xsd:enumeration value="BK03"/>
+<xsd:enumeration value="BK04"/>
+<xsd:enumeration value="BK05"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InvoicingAddressType_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BJ01"/>
+<xsd:enumeration value="BJ02"/>
+<xsd:enumeration value="BJ03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Target_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ElectronicInvoicingAddress_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MediatorIdentification_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="IBAN_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="BankName_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SWIFT_S50_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DocumentType_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="ACK"/>
+<xsd:enumeration value="E31"/>
+<xsd:enumeration value="E58"/>
+<xsd:enumeration value="E66"/>
+<xsd:enumeration value="F01"/>
+<xsd:enumeration value="F02"/>
+<xsd:enumeration value="F03"/>
+<xsd:enumeration value="F04"/>
+<xsd:enumeration value="F05"/>
+<xsd:enumeration value="F06"/>
+<xsd:enumeration value="F07"/>
+<xsd:enumeration value="F08"/>
+<xsd:enumeration value="F09"/>
+<xsd:enumeration value="F10"/>
+<xsd:enumeration value="F11"/>
+<xsd:enumeration value="F12"/>
+<xsd:enumeration value="F13"/>
+<xsd:enumeration value="F14"/>
+<xsd:enumeration value="F15"/>
+<xsd:enumeration value="F16"/>
+<xsd:enumeration value="F17"/>
+<xsd:enumeration value="F18"/>
+<xsd:enumeration value="F19"/>
+<xsd:enumeration value="F20"/>
+<xsd:enumeration value="F21"/>
+<xsd:enumeration value="E44"/>
+<xsd:enumeration value="F22"/>
+<xsd:enumeration value="F23"/>
+<xsd:enumeration value="F24"/>
+<xsd:enumeration value="F25"/>
+<xsd:enumeration value="F26"/>
+<xsd:enumeration value="F27"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Creation_DT_Required_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SenderRoutingInformation_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MessageNumber_I6_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MessagesTotal_I6_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="RegistrationTimestamp_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyBusinessProcess_S10_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="10"/>
+<xsd:enumeration value="DH-111-1"/>
+<xsd:enumeration value="DH-112-1"/>
+<xsd:enumeration value="DH-113-1"/>
+<xsd:enumeration value="DH-114-2"/>
+<xsd:enumeration value="DH-114-3"/>
+<xsd:enumeration value="DH-114-4"/>
+<xsd:enumeration value="DH-116-2"/>
+<xsd:enumeration value="DH-116-3"/>
+<xsd:enumeration value="DH-121"/>
+<xsd:enumeration value="DH-122-1"/>
+<xsd:enumeration value="DH-123"/>
+<xsd:enumeration value="DH-124-1"/>
+<xsd:enumeration value="DH-125-1"/>
+<xsd:enumeration value="DH-125-2"/>
+<xsd:enumeration value="DH-125-3"/>
+<xsd:enumeration value="DH-126-1"/>
+<xsd:enumeration value="DH-127-1"/>
+<xsd:enumeration value="DH-131-1"/>
+<xsd:enumeration value="DH-132-1"/>
+<xsd:enumeration value="DH-133-1"/>
+<xsd:enumeration value="DH-134-1"/>
+<xsd:enumeration value="DH-135-1"/>
+<xsd:enumeration value="DH-141"/>
+<xsd:enumeration value="DH-142"/>
+<xsd:enumeration value="DH-143"/>
+<xsd:enumeration value="DH-311-1"/>
+<xsd:enumeration value="DH-312-1"/>
+<xsd:enumeration value="DH-321-1"/>
+<xsd:enumeration value="DH-322-1"/>
+<xsd:enumeration value="DH-331-1"/>
+<xsd:enumeration value="DH-332-1"/>
+<xsd:enumeration value="DH-333-1"/>
+<xsd:enumeration value="DH-341-1"/>
+<xsd:enumeration value="DH-342-1"/>
+<xsd:enumeration value="DH-343-1"/>
+<xsd:enumeration value="DH-344-1"/>
+<xsd:enumeration value="DH-361"/>
+<xsd:enumeration value="DH-362"/>
+<xsd:enumeration value="DH-411-1"/>
+<xsd:enumeration value="DH-412-1"/>
+<xsd:enumeration value="DH-413-1"/>
+<xsd:enumeration value="DH-421-1"/>
+<xsd:enumeration value="DH-422-1"/>
+<xsd:enumeration value="DH-423-1"/>
+<xsd:enumeration value="DH-513-2"/>
+<xsd:enumeration value="DH-513-3"/>
+<xsd:enumeration value="DH-513-4"/>
+<xsd:enumeration value="DH-513-5"/>
+<xsd:enumeration value="DH-521"/>
+<xsd:enumeration value="DH-522"/>
+<xsd:enumeration value="DH-523"/>
+<xsd:enumeration value="DH-711"/>
+<xsd:enumeration value="DH-712"/>
+<xsd:enumeration value="DH-721-1"/>
+<xsd:enumeration value="DH-722-1"/>
+<xsd:enumeration value="DH-723-1"/>
+<xsd:enumeration value="DH-731-1"/>
+<xsd:enumeration value="DH-732-1"/>
+<xsd:enumeration value="DH-733-1"/>
+<xsd:enumeration value="DH-741-1"/>
+<xsd:enumeration value="DH-742-1"/>
+<xsd:enumeration value="DH-743-1"/>
+<xsd:enumeration value="DH-811"/>
+<xsd:enumeration value="DH-812"/>
+<xsd:enumeration value="DH-813"/>
+<xsd:enumeration value="DH-921-1"/>
+<xsd:enumeration value="DH-922-1"/>
+<xsd:enumeration value="DH-923-1"/>
+<xsd:enumeration value="DH-111-2"/>
+<xsd:enumeration value="DH-111-3"/>
+<xsd:enumeration value="DH-111-4"/>
+<xsd:enumeration value="DH-112-2"/>
+<xsd:enumeration value="DH-112-3"/>
+<xsd:enumeration value="DH-112-4"/>
+<xsd:enumeration value="DH-112-5"/>
+<xsd:enumeration value="DH-113-2"/>
+<xsd:enumeration value="DH-113-3"/>
+<xsd:enumeration value="DH-122-2"/>
+<xsd:enumeration value="DH-122-3"/>
+<xsd:enumeration value="DH-122-4"/>
+<xsd:enumeration value="DH-122-5"/>
+<xsd:enumeration value="DH-124-2"/>
+<xsd:enumeration value="DH-131-2"/>
+<xsd:enumeration value="DH-132-2"/>
+<xsd:enumeration value="DH-133-2"/>
+<xsd:enumeration value="DH-134-2"/>
+<xsd:enumeration value="DH-135-2"/>
+<xsd:enumeration value="DH-211"/>
+<xsd:enumeration value="DH-212-1"/>
+<xsd:enumeration value="DH-212-2"/>
+<xsd:enumeration value="DH-212-3"/>
+<xsd:enumeration value="DH-212-4"/>
+<xsd:enumeration value="DH-212-5"/>
+<xsd:enumeration value="DH-221"/>
+<xsd:enumeration value="DH-222"/>
+<xsd:enumeration value="DH-223"/>
+<xsd:enumeration value="DH-231"/>
+<xsd:enumeration value="DH-232"/>
+<xsd:enumeration value="DH-233"/>
+<xsd:enumeration value="DH-241"/>
+<xsd:enumeration value="DH-242"/>
+<xsd:enumeration value="DH-243"/>
+<xsd:enumeration value="DH-251"/>
+<xsd:enumeration value="DH-252"/>
+<xsd:enumeration value="DH-253"/>
+<xsd:enumeration value="DH-261"/>
+<xsd:enumeration value="DH-262"/>
+<xsd:enumeration value="DH-263"/>
+<xsd:enumeration value="DH-311-2"/>
+<xsd:enumeration value="DH-311-3"/>
+<xsd:enumeration value="DH-311-4"/>
+<xsd:enumeration value="DH-311-5"/>
+<xsd:enumeration value="DH-311-6"/>
+<xsd:enumeration value="DH-311-7"/>
+<xsd:enumeration value="DH-311-8"/>
+<xsd:enumeration value="DH-311-9"/>
+<xsd:enumeration value="DH-311-10"/>
+<xsd:enumeration value="DH-312-2"/>
+<xsd:enumeration value="DH-321-2"/>
+<xsd:enumeration value="DH-322-2"/>
+<xsd:enumeration value="DH-323-1"/>
+<xsd:enumeration value="DH-323-2"/>
+<xsd:enumeration value="DH-331-2"/>
+<xsd:enumeration value="DH-331-3"/>
+<xsd:enumeration value="DH-331-4"/>
+<xsd:enumeration value="DH-331-5"/>
+<xsd:enumeration value="DH-331-6"/>
+<xsd:enumeration value="DH-332-2"/>
+<xsd:enumeration value="DH-333-2"/>
+<xsd:enumeration value="DH-333-3"/>
+<xsd:enumeration value="DH-341-2"/>
+<xsd:enumeration value="DH-341-3"/>
+<xsd:enumeration value="DH-341-4"/>
+<xsd:enumeration value="DH-341-5"/>
+<xsd:enumeration value="DH-341-6"/>
+<xsd:enumeration value="DH-342-2"/>
+<xsd:enumeration value="DH-342-3"/>
+<xsd:enumeration value="DH-343-2"/>
+<xsd:enumeration value="DH-351-1"/>
+<xsd:enumeration value="DH-351-2"/>
+<xsd:enumeration value="DH-351-3"/>
+<xsd:enumeration value="DH-351-4"/>
+<xsd:enumeration value="DH-351-5"/>
+<xsd:enumeration value="DH-352-1"/>
+<xsd:enumeration value="DH-352-2"/>
+<xsd:enumeration value="DH-352-3"/>
+<xsd:enumeration value="DH-344-2"/>
+<xsd:enumeration value="DH-411-2"/>
+<xsd:enumeration value="DH-412-2"/>
+<xsd:enumeration value="DH-413-2"/>
+<xsd:enumeration value="DH-414-1"/>
+<xsd:enumeration value="DH-414-2"/>
+<xsd:enumeration value="DH-421-2"/>
+<xsd:enumeration value="DH-422-2"/>
+<xsd:enumeration value="DH-423-2"/>
+<xsd:enumeration value="DH-424-1"/>
+<xsd:enumeration value="DH-424-2"/>
+<xsd:enumeration value="DH-512-1"/>
+<xsd:enumeration value="DH-512-2"/>
+<xsd:enumeration value="DH-512-3"/>
+<xsd:enumeration value="DH-514-1"/>
+<xsd:enumeration value="DH-514-2"/>
+<xsd:enumeration value="DH-514-3"/>
+<xsd:enumeration value="DH-515-1"/>
+<xsd:enumeration value="DH-515-2"/>
+<xsd:enumeration value="DH-516-1"/>
+<xsd:enumeration value="DH-516-2"/>
+<xsd:enumeration value="DH-611"/>
+<xsd:enumeration value="DH-612"/>
+<xsd:enumeration value="DH-713"/>
+<xsd:enumeration value="DH-714"/>
+<xsd:enumeration value="DH-715"/>
+<xsd:enumeration value="DH-716"/>
+<xsd:enumeration value="DH-717"/>
+<xsd:enumeration value="DH-718"/>
+<xsd:enumeration value="DH-721-2"/>
+<xsd:enumeration value="DH-722-2"/>
+<xsd:enumeration value="DH-723-2"/>
+<xsd:enumeration value="DH-724-1"/>
+<xsd:enumeration value="DH-724-2"/>
+<xsd:enumeration value="DH-724-3"/>
+<xsd:enumeration value="DH-725-1"/>
+<xsd:enumeration value="DH-725-2"/>
+<xsd:enumeration value="DH-725-3"/>
+<xsd:enumeration value="DH-726-1"/>
+<xsd:enumeration value="DH-726-2"/>
+<xsd:enumeration value="DH-726-3"/>
+<xsd:enumeration value="DH-731-2"/>
+<xsd:enumeration value="DH-731-3"/>
+<xsd:enumeration value="DH-732-2"/>
+<xsd:enumeration value="DH-732-3"/>
+<xsd:enumeration value="DH-741-2"/>
+<xsd:enumeration value="DH-742-2"/>
+<xsd:enumeration value="DH-743-2"/>
+<xsd:enumeration value="DH-821"/>
+<xsd:enumeration value="DH-822"/>
+<xsd:enumeration value="DH-823"/>
+<xsd:enumeration value="DH-911"/>
+<xsd:enumeration value="DH-912"/>
+<xsd:enumeration value="DH-913"/>
+<xsd:enumeration value="DH-921-2"/>
+<xsd:enumeration value="DH-922-2"/>
+<xsd:enumeration value="DH-923-2"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyBusinessProcessRole_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="DDM"/>
+<xsd:enumeration value="DDQ"/>
+<xsd:enumeration value="DDZ"/>
+<xsd:enumeration value="ESC"/>
+<xsd:enumeration value="MDR"/>
+<xsd:enumeration value="MIA"/>
+<xsd:enumeration value="Z08"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyIndustryClassification_S3_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="23"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ReasonCode_S4_NFI_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BA01"/>
+<xsd:enumeration value="BA02"/>
+<xsd:enumeration value="BA03"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EventReasonCode_S20_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EventReasonText_S300_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EventDetails_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SendersSeriesIdentification_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SeriesUniqueIdentification_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SeriesReasonCode_S20_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SeriesReasonText_S300_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="300"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SeriesDetails_S90_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductDescription_S300_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="300"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductStatus_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="End_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductName_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceUnitCode_S3_2_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="MON"/>
+<xsd:enumeration value="ANN"/>
+<xsd:enumeration value="KWH"/>
+<xsd:enumeration value="MWH"/>
+<xsd:enumeration value="GWH"/>
+<xsd:enumeration value="D32"/>
+<xsd:enumeration value="KWT"/>
+<xsd:enumeration value="MAW"/>
+<xsd:enumeration value="KVR"/>
+<xsd:enumeration value="MAR"/>
+<xsd:enumeration value="EA"/>
+<xsd:enumeration value="HUR"/>
+<xsd:enumeration value="NM3"/>
+<xsd:enumeration value="MQH"/>
+<xsd:enumeration value="KWT"/>
+<xsd:enumeration value="MAW"/>
+<xsd:enumeration value="NM3"/>
+<xsd:enumeration value="ZZ"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceInformationType_S4_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="4"/>
+<xsd:enumeration value="BG01"/>
+<xsd:enumeration value="BG02"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TaxRate_F8_6_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductComponentName_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceUnit_S14_2_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="14"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyBusinessProcessRole_S3_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductIdentification_S50_Optional_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="0"/>
+<xsd:maxLength value="50"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OnlyActiveProducts_S1_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="1"/>
+<xsd:enumeration value="0"/>
+<xsd:enumeration value="1"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S90_Required_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="90"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Identification_S18_5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="18"/>
+<xsd:enumeration value="8716867000030"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="MeteringPointType_S3_5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="3"/>
+<xsd:enumeration value="E17"/>
+<xsd:enumeration value="E18"/>
+<xsd:enumeration value="E20"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Sequence_I6_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="EnergyQuantity_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="DeltaQuantity_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ProductOwner_S13_9_Required_Type_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="13"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="PriceWithTax_F8_6_Required_Negative_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="-99999999.999999"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ResolutionDuration_S25_5_Type">
+<xsd:restriction base="xsd:string">
+<xsd:minLength value="1"/>
+<xsd:maxLength value="25"/>
+<xsd:enumeration value="PT15M"/>
+<xsd:enumeration value="PT1H"/>
+<xsd:enumeration value="P1D"/>
+<xsd:enumeration value="P1M"/>
+<xsd:enumeration value="P1Y"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Sequence_I8_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="99999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Value_I1_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="1"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="Start_DT_Optional_Type">
+<xsd:restriction base="xsd:dateTime">
+<xsd:pattern value="((19|20|21)[0-9][0-9])[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])[T]([01][0-9]|[2][0-3])[:]([0-5][0-9])[:]([0-5][0-9])(([.][0-9]+){0,1})([+|-]([01][0-9]|[2][0-3])[:](([0-5][0-9])){0,1}|Z)"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="SEQ_I4_Type">
+<xsd:restriction base="xsd:int">
+<xsd:maxInclusive value="9999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="InQTY_F8_6_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="OutQTY_F8_6_Required_Type">
+<xsd:restriction base="xsd:decimal">
+<xsd:fractionDigits value="6"/>
+<xsd:maxInclusive value="99999999.999999"/>
+<xsd:minInclusive value="0"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:complexType name="Identification_S50_260_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S50_260_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType260"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="IdentificationType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="IdentificationType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CustomerType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="CustomerType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CustomerSubType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="CustomerSubType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Language_S2_5_Type">
+<xsd:simpleContent>
+<xsd:extension base="Language_S2_5_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CommunicationChannel_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="CommunicationChannel_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CountryCode_S2_5_Type">
+<xsd:simpleContent>
+<xsd:extension base="CountryCode_S2_5_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S90_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S90_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringPointType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointSubType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringPointSubType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="RelatedMeteringPoint_S90_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="RelatedMeteringPoint_S90_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S90_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S90_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="PhysicalStatusType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="PhysicalStatusType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S50_305_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S50_305_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType305"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Type_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="Type_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CountryCode_S2_5_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="CountryCode_S2_5_2_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Language_S2_5_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="Language_S2_5_2_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="OriginalBusinessDocumentSender_S13_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="OriginalBusinessDocumentSender_S13_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="UpdateReason_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="UpdateReason_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Type_S4_NFI_3_Type">
+<xsd:simpleContent>
+<xsd:extension base="Type_S4_NFI_3_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="IdentificationMP_S90_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="IdentificationMP_S90_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ContactType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="ContactType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="InvoicingChannel_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="InvoicingChannel_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="InvoicingMethod_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="InvoicingMethod_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ContractReason_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="ContractReason_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Reason_S4_NFI_1_Type">
+<xsd:simpleContent>
+<xsd:extension base="Reason_S4_NFI_1_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S13_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S13_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="EnergyContractByCustomer_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="EnergyContractByCustomer_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="TransferContractByCustomer_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="TransferContractByCustomer_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ContactType_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="ContactType_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="AddressType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="AddressType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S50_260_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S50_260_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType260"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ReasonForCancel_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="ReasonForCancel_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S90_305_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S90_305_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType305"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringPoint_S90_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringPoint_S90_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringArea_S50_305_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringArea_S50_305_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType305"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointType_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringPointType_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="AccountingPointType_S4_NFI_1_Type">
+<xsd:simpleContent>
+<xsd:extension base="AccountingPointType_S4_NFI_1_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringArea_S50_305_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringArea_S50_305_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType305"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ConnectionStatus_S4_NFI_1_Type">
+<xsd:simpleContent>
+<xsd:extension base="ConnectionStatus_S4_NFI_1_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ContactType_S4_NFI_3_Type">
+<xsd:simpleContent>
+<xsd:extension base="ContactType_S4_NFI_3_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CommunicationChannel_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="CommunicationChannel_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Supplier_S13_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="Supplier_S13_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="BusinessType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="BusinessType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ProductionUnitType_S3_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="ProductionUnitType_S3_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Identification_S90_260_305_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="Identification_S90_260_305_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType260_305"/>
+<xsd:attribute name="schemeIdentifier" use="optional" type="schemeIdentifierTypeSVK"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="DeviationType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="DeviationType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="MeteringPoint_S90_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="MeteringPoint_S90_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="OriginalBusinessDocumentSender_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="OriginalBusinessDocumentSender_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="AuthorPartyIdentification_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="AuthorPartyIdentification_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="RecipientPartyIdentification_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="RecipientPartyIdentification_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="AuthorPartyIdentification_S13_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="AuthorPartyIdentification_S13_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="RecipientPartyIdentification_S13_9_Optional_Type">
+<xsd:simpleContent>
+<xsd:extension base="RecipientPartyIdentification_S13_9_Optional_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="Reason_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="Reason_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="PartyIdentification_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="PartyIdentification_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="PartyType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="PartyType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="OrganizationStatus_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="OrganizationStatus_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="InvoicingChannel_S4_NFI_2_Type">
+<xsd:simpleContent>
+<xsd:extension base="InvoicingChannel_S4_NFI_2_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="CountryCode_S2_5_3_Type">
+<xsd:simpleContent>
+<xsd:extension base="CountryCode_S2_5_3_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType5"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ContactType_S4_NFI_4_Type">
+<xsd:simpleContent>
+<xsd:extension base="ContactType_S4_NFI_4_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="InvoicingAddressType_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="InvoicingAddressType_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ReasonCode_S4_NFI_Type">
+<xsd:simpleContent>
+<xsd:extension base="ReasonCode_S4_NFI_Type_Type">
+<xsd:attribute name="listAgencyIdentifier" use="required" type="listAgencyIdentifierTypeNFI"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType name="ProductOwner_S13_9_Required_Type">
+<xsd:simpleContent>
+<xsd:extension base="ProductOwner_S13_9_Required_Type_Type">
+<xsd:attribute name="schemeAgencyIdentifier" use="required" type="schemeAgencyIdentifierType9"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:simpleType name="listAgencyIdentifierTypeNFI">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="NFI"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeAgencyIdentifierType260">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="_260"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeAgencyIdentifierType305">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="_305"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeAgencyIdentifierType260_305">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="_260"/>
+   <xsd:enumeration value="_305"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeIdentifierTypeSVK">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="SVK"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeAgencyIdentifierType5">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="_5"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+ <xsd:simpleType name="schemeAgencyIdentifierType9">
+  <xsd:restriction base="xsd:string">
+   <xsd:enumeration value="_9"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+</xsd:schema>

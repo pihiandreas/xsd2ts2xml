@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsm="urn:fi:Datahub:mif:test:ProcessMessageRequestMessage:v1" xmlns:abie="urn:fi:Datahub:mif:common:v1"  targetNamespace="urn:fi:Datahub:mif:test:ProcessMessageRequestMessage:v1" 
+ xmlns:F01="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"
+ xmlns:F02="urn:fi:Datahub:mif:query:F02_RequestMPList:v1"
+ xmlns:E58="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:v1"
+ xmlns:F03="urn:fi:Datahub:mif:query:F03_RequestMPInfo:v1"
+ xmlns:F04="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:v1"
+ xmlns:F06="urn:fi:Datahub:mif:masterdata:F06_MasterDataContractEvent:v1"
+ xmlns:F18="urn:fi:Datahub:mif:masterdata:F18_MasterDataContractEvent:v1"
+ xmlns:F09="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:v1"
+ xmlns:F11="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"
+ xmlns:F12="urn:fi:Datahub:mif:masterdata:F12_RequestProductDataInfo:v1"
+ xmlns:F14="urn:fi:Datahub:mif:invoicing:F14_RequestInvoicingDataInfo:v1"
+ xmlns:F15="urn:fi:Datahub:mif:masterdata:F15_AuthorizationEvent:v1"
+ xmlns:F17="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:v1"
+ xmlns:F22="urn:fi:Datahub:mif:masterdata:F22_MasterDataProductEvent:v1"
+ xmlns:F26="urn:fi:Datahub:mif:masterdata:F26_MasterDataECEvent:v1"
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"   schemaLocation="../../masterdata/F01_MasterDataCustomerEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F02_RequestMPList:v1"   schemaLocation="../../query/F02_RequestMPList.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:v1"   schemaLocation="../../masterdata/E58_MasterDataMPEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F03_RequestMPInfo:v1"   schemaLocation="../../query/F03_RequestMPInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:v1"   schemaLocation="../../masterdata/F04_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F06_MasterDataContractEvent:v1"   schemaLocation="../../masterdata/F06_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F18_MasterDataContractEvent:v1"   schemaLocation="../../masterdata/F18_MasterDataContractEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:v1"   schemaLocation="../../masterdata/F09_RequestPowerSwitch.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"   schemaLocation="../../masterdata/F11_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F12_RequestProductDataInfo:v1"   schemaLocation="../../masterdata/F12_RequestProductDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:invoicing:F14_RequestInvoicingDataInfo:v1"   schemaLocation="../../invoicing/F14_RequestInvoicingDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F15_AuthorizationEvent:v1"   schemaLocation="../../masterdata/F15_AuthorizationEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:v1"   schemaLocation="../../query/F17_PartyInfoRequest.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F22_MasterDataProductEvent:v1"   schemaLocation="../../masterdata/F22_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F26_MasterDataECEvent:v1"   schemaLocation="../../masterdata/F26_MasterDataECEvent.xsd"/>
+ <xs:element name="ProcessMessageRequestMessage" type="rsm:ProcessMessageRequestMessage_Type"/>
+<xs:complexType name="ProcessMessageRequestMessage_Type">
+<xs:choice maxOccurs="1">
+<xs:element  ref="F01:MasterDataCustomerEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F02:RequestMPListMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="E58:MasterDataMPEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F03:RequestMPInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F04:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F06:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F18:MasterDataContractEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F09:RequestPowerSwitchMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F11:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F12:RequestProductDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F14:RequestInvoicingDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F15:AuthorizationEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F17:PartyInfoRequestMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F22:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F26:MasterDataECEventMessage" minOccurs="1" maxOccurs="1"/>
+</xs:choice> </xs:complexType>
+</xs:schema>
+ 

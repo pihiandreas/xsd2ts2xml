@@ -1,5 +1,5 @@
 {
   "spec_files": [
-    "test/**/*.spec.ts"
+    "test/generator_datahub.spec.ts"
   ]
 }

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:common:PEC_ProcessEnergyContext:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:common:PEC_ProcessEnergyContext:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="ProcessEnergyContext_Type">
+<xsd:sequence>
+<xsd:element name="EnergyBusinessProcess" type="rsm:EnergyBusinessProcess_S10_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="EnergyBusinessProcessRole" type="rsm:EnergyBusinessProcessRole_S3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="EnergyIndustryClassification" type="rsm:EnergyIndustryClassification_S3_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

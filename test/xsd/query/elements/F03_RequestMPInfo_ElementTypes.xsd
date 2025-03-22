@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F03_RequestMPInfo:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:query:F03_RequestMPInfo:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="RequestMPInfo_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="IdentificationMP" type="rsm:IdentificationMP_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MPCustomer" type="rsm:MPCustomer_F03_Type" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MPCustomer_F03_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_260_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

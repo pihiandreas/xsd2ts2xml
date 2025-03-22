@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F26_MasterDataECEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F26_MasterDataECEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataECEvent_Type">
+<xsd:sequence>
+<xsd:element name="EnergyCommunityIdentification" type="rsm:EnergyCommunityIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="EnergyCommunityName" type="rsm:EnergyCommunityName_S200_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="EndOfOccurrence" type="rsm:EndOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="SurplusMethod" type="rsm:SurplusMethod_S3_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ConsAccountingPoints" type="rsm:ConsAccountingPoints_F26_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="SSProdAccountingPoints" type="rsm:SSProdAccountingPoints_F26_Type" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsAccountingPoints_F26_Type">
+<xsd:sequence>
+<xsd:element name="AccountingPointIdentification" type="rsm:AccountingPointIdentification_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Percentage" type="rsm:Percentage_F2_2_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SSProdAccountingPoints_F26_Type">
+<xsd:sequence>
+<xsd:element name="AccountingPointIdentification" type="rsm:AccountingPointIdentification_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="IsSurplus" type="rsm:IsSurplus_S1_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

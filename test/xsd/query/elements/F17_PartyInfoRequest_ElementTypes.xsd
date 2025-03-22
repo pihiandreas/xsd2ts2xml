@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="PartyInfoRequest_Type">
+<xsd:sequence>
+<xsd:element name="PartyInfo" type="rsm:PartyInfo_F17_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="PartyType" type="rsm:PartyType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="PartyInfo_F17_Type">
+<xsd:sequence>
+<xsd:element name="PartyIdentification" type="rsm:PartyIdentification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

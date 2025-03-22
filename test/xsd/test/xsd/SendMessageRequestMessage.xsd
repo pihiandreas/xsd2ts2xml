@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsm="urn:fi:Datahub:mif:test:SendMessageRequestMessage:v1" xmlns:abie="urn:fi:Datahub:mif:common:v1"  targetNamespace="urn:fi:Datahub:mif:test:SendMessageRequestMessage:v1" 
+ xmlns:E66="urn:fi:Datahub:mif:metering:E66_EnergyTimeSeries:v1"
+ xmlns:F08="urn:fi:Datahub:mif:metering:F08_RequestMeasuredDataInfo:v1"
+ xmlns:F10="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:v1"
+ xmlns:F13="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"
+ xmlns:F23="urn:fi:Datahub:mif:masterdata:F23_MasterDataProductEvent:v1"
+ xmlns:F24="urn:fi:Datahub:mif:masterdata:F24_MasterDataProductEvent:v1"
+ xmlns:F25="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xs:import namespace="urn:fi:Datahub:mif:metering:E66_EnergyTimeSeries:v1"   schemaLocation="../../metering/E66_EnergyTimeSeries.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F08_RequestMeasuredDataInfo:v1"   schemaLocation="../../metering/F08_RequestMeasuredDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F10_RequestSettlementDataInfo:v1"   schemaLocation="../../metering/F10_RequestSettlementDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"   schemaLocation="../../invoicing/F13_InvoicingDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F23_MasterDataProductEvent:v1"   schemaLocation="../../masterdata/F23_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F24_MasterDataProductEvent:v1"   schemaLocation="../../masterdata/F24_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"   schemaLocation="../../metering/F25_EnergyTimeSeries.xsd"/>
+ <xs:element name="SendMessageRequestMessage" type="rsm:SendMessageRequestMessage_Type"/>
+<xs:complexType name="SendMessageRequestMessage_Type">
+<xs:choice maxOccurs="1">
+<xs:element ref="E66:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F08:RequestMeasuredDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F10:RequestSettlementDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F13:InvoicingDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F23:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F24:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="F25:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+</xs:choice> </xs:complexType>
+</xs:schema>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:metering:F19_BalanceCorrectionData:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:metering:F19_BalanceCorrectionData:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="BalanceCorrectionData_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S36_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_F19_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="BalanceSupplierInvolvedEnergyParty" type="rsm:BalanceSupplierInvolvedEnergyParty_F19_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="BalanceCalculationDateTime" type="rsm:BalanceCalculationDateTime_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="DeviationType" type="rsm:DeviationType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ObservationPeriod" type="rsm:ObservationPeriod_F19_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="TotalSums" type="rsm:TotalSums_F19_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="BalanceCorrectionDetails" type="rsm:BalanceCorrectionDetails_F19_Type" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_F19_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BalanceSupplierInvolvedEnergyParty_F19_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ObservationPeriod_F19_Type">
+<xsd:sequence>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TotalSums_F19_Type">
+<xsd:sequence>
+<xsd:element name="TotalAmount" type="rsm:TotalAmount_F8_2_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Energy" type="rsm:Energy_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BalanceCorrectionDetails_F19_Type">
+<xsd:sequence>
+<xsd:element name="MeteringPoint" type="rsm:MeteringPoint_S90_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointType" type="rsm:MeteringPointType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringMethod" type="rsm:MeteringMethod_S3_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Values" type="rsm:Values_F19_Type" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Values_F19_Type">
+<xsd:sequence>
+<xsd:element name="DT" type="rsm:DT_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OldQty" type="rsm:OldQty_F8_6_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="NewQty" type="rsm:NewQty_F8_6_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="DeltaQty" type="rsm:DeltaQty_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Price" type="rsm:Price_F6_2_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="RD" type="rsm:RD_S25_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="RS" type="rsm:RS_S4_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:metering:F07_RequestMeasuredData:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:metering:F07_RequestMeasuredData:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="RequestMeasuredData_Type">
+<xsd:sequence>
+<xsd:element name="MeteringPoint" type="rsm:MeteringPoint_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringArea" type="rsm:MeteringArea_S50_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InAreaUsedDomainLocation" type="rsm:InAreaUsedDomainLocation_F07_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OutAreaUsedDomainLocation" type="rsm:OutAreaUsedDomainLocation_F07_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RequestPeriod" type="rsm:RequestPeriod_F07_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InAreaUsedDomainLocation_F07_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="OutAreaUsedDomainLocation_F07_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RequestPeriod_F07_Type">
+<xsd:sequence>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

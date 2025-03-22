@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:E58_MasterDataMPEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataMPEvent_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentReference" type="rsm:OriginalBusinessDocumentReference_S36_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentSender" type="rsm:OriginalBusinessDocumentSender_S13_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="UpdateReason" type="rsm:UpdateReason_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointUsedDomainLocation" type="rsm:MeteringPointUsedDomainLocation_E58_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointUsedDomainLocation_E58_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PhysicalStatusType" type="rsm:PhysicalStatusType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointType" type="rsm:MeteringPointType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointSubType" type="rsm:MeteringPointSubType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RemoteConnectable" type="rsm:RemoteConnectable_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringTimeDivision" type="rsm:MeteringTimeDivision_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeterIdentification" type="rsm:MeterIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RelatedMeteringPoint" type="rsm:RelatedMeteringPoint_S90_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CommunityIdentification" type="rsm:CommunityIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CommunityName" type="rsm:CommunityName_S200_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Netting" type="rsm:Netting_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_E58_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringPointAddress" type="rsm:MeteringPointAddress_E58_Type" minOccurs="0" maxOccurs="8"/>
+<xsd:element name="MPPositionMeteringPointGeographicalCoordinate" type="rsm:MPPositionMeteringPointGeographicalCoordinate_E58_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MPDetailMeteringPointCharacteristic" type="rsm:MPDetailMeteringPointCharacteristic_E58_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="LoadUnit" type="rsm:LoadUnit_E58_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="StorageUnit" type="rsm:StorageUnit_E58_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="ProductionUnit" type="rsm:ProductionUnit_E58_Type" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_E58_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointAddress_E58_Type">
+<xsd:sequence>
+<xsd:element name="Type" type="rsm:Type_S4_NFI_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_2_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AddressFreeForm" type="rsm:AddressFreeForm_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Language" type="rsm:Language_S2_5_2_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MPPositionMeteringPointGeographicalCoordinate_E58_Type">
+<xsd:sequence>
+<xsd:element name="Latitude" type="rsm:Latitude_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Longitude" type="rsm:Longitude_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MPDetailMeteringPointCharacteristic_E58_Type">
+<xsd:sequence>
+<xsd:element name="RemoteReadable" type="rsm:RemoteReadable_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringMethod" type="rsm:MeteringMethod_S3_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ResolutionDuration" type="rsm:ResolutionDuration_S25_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="UserGroup" type="rsm:UserGroup_S4_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="HeatingMethodType" type="rsm:HeatingMethodType_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FuseSize" type="rsm:FuseSize_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ContractedConnectionCapacity" type="rsm:ContractedConnectionCapacity_F8_2_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="TaxCategory" type="rsm:TaxCategory_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="EstimatedMetrics" type="rsm:EstimatedMetrics_E58_Type" minOccurs="0" maxOccurs="2"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="LoadUnit_E58_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Timing" type="rsm:Timing_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Limits" type="rsm:Limits_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MaxPower" type="rsm:MaxPower_F8_2_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="UnitType" type="rsm:UnitType_S5_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StorageUnit_E58_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Type" type="rsm:Type_S4_NFI_3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Capacity" type="rsm:Capacity_F8_2_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="UnitType" type="rsm:UnitType_S5_2_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MaxCapacity" type="rsm:MaxCapacity_F8_2_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MaxCapacityUnitType" type="rsm:MaxCapacityUnitType_S5_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductionUnit_E58_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Type" type="rsm:Type_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MaxCapacity" type="rsm:MaxCapacity_F8_2_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="UnitType" type="rsm:UnitType_S5_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EstimatedMetrics_E58_Type">
+<xsd:sequence>
+<xsd:element name="MeterTimeFrame" type="rsm:MeterTimeFrame_S3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Total" type="rsm:Total_I9_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

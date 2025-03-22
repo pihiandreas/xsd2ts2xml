@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataProductEvent_Type">
+<xsd:sequence>
+<xsd:element name="ProductIdentification" type="rsm:ProductIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductDescription" type="rsm:ProductDescription_S300_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ProductStatus" type="rsm:ProductStatus_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ValidityTime" type="rsm:ValidityTime_F11_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductNames" type="rsm:ProductNames_F11_Type" minOccurs="1" maxOccurs="3"/>
+<xsd:element name="ProductComponents" type="rsm:ProductComponents_F11_Type" minOccurs="1" maxOccurs="unbounded">
+    <xsd:unique name="uniquePCDLanguage">
+     <xsd:selector xpath="rsm:ProductComponentInformation"/>
+     <xsd:field xpath="rsm:Language"/>
+    </xsd:unique>
+   </xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ValidityTime_F11_Type">
+<xsd:sequence>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductNames_F11_Type">
+<xsd:sequence>
+<xsd:element name="Language" type="rsm:Language_S2_5_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductName" type="rsm:ProductName_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductComponents_F11_Type">
+<xsd:sequence>
+<xsd:element name="ProductComponentIdentification" type="rsm:ProductComponentIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PriceUnitCode" type="rsm:PriceUnitCode_S3_2_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="PriceInformationType" type="rsm:PriceInformationType_S4_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="TaxRate" type="rsm:TaxRate_F8_6_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductComponentInformation" type="rsm:ProductComponentInformation_F11_Type" minOccurs="1" maxOccurs="3"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductComponentInformation_F11_Type">
+<xsd:sequence>
+<xsd:element name="Language" type="rsm:Language_S2_5_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductComponentName" type="rsm:ProductComponentName_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PriceUnit" type="rsm:PriceUnit_S14_2_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

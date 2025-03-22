@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F09_RequestPowerSwitch:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="RequestPowerSwitch_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentReference" type="rsm:OriginalBusinessDocumentReference_S36_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentSender" type="rsm:OriginalBusinessDocumentSender_S13_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPoint" type="rsm:MeteringPoint_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ConnectionStatus" type="rsm:ConnectionStatus_S4_NFI_1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Contact" type="rsm:Contact_F09_Type" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Contact_F09_Type">
+<xsd:sequence>
+<xsd:element name="ContactType" type="rsm:ContactType_S4_NFI_3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="GivenName" type="rsm:GivenName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="FamilyName" type="rsm:FamilyName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Communication" type="rsm:Communication_F09_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Communication_F09_Type">
+<xsd:sequence>
+<xsd:element name="CommunicationChannel" type="rsm:CommunicationChannel_S4_NFI_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CompleteNumber" type="rsm:CompleteNumber_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

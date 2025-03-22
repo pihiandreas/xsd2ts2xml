@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rsm="urn:fi:Datahub:mif:test:ProcessMessageResponseMessage:v1" xmlns:abie="urn:fi:Datahub:mif:common:v1"  targetNamespace="urn:fi:Datahub:mif:test:ProcessMessageResponseMessage:v1" 
+ xmlns:F01="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"
+ xmlns:F20="urn:fi:Datahub:mif:query:F20_ResponseMPList:v1"
+ xmlns:F21="urn:fi:Datahub:mif:query:F21_ResponseMPInfo:v1"
+ xmlns:F11="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"
+ xmlns:F13="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"
+ xmlns:F16="urn:fi:Datahub:mif:query:F16_PartyInfo:v1"
+ xmlns:ACK="urn:fi:Datahub:mif:common:ACK_Acknowledgement:v1"
+ xmlns:F25="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F01_MasterDataCustomerEvent:v1"   schemaLocation="../../masterdata/F01_MasterDataCustomerEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F20_ResponseMPList:v1"   schemaLocation="../../query/F20_ResponseMPList.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F21_ResponseMPInfo:v1"   schemaLocation="../../query/F21_ResponseMPInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:masterdata:F11_MasterDataProductEvent:v1"   schemaLocation="../../masterdata/F11_MasterDataProductEvent.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:invoicing:F13_InvoicingDataInfo:v1"   schemaLocation="../../invoicing/F13_InvoicingDataInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:query:F16_PartyInfo:v1"   schemaLocation="../../query/F16_PartyInfo.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:common:ACK_Acknowledgement:v1"   schemaLocation="../../common/ACK_Acknowledgement.xsd"/>
+<xs:import namespace="urn:fi:Datahub:mif:metering:F25_EnergyTimeSeries:v1"   schemaLocation="../../metering/F25_EnergyTimeSeries.xsd"/>
+ <xs:element name="ProcessMessageResponseMessage" type="rsm:ProcessMessageResponseMessage_Type"/>
+<xs:complexType name="ProcessMessageResponseMessage_Type">
+<xs:choice maxOccurs="1">
+<xs:element  ref="F01:MasterDataCustomerEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F20:ResponseMPListMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F21:ResponseMPInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F11:MasterDataProductEventMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F13:InvoicingDataInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F16:PartyInfoMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="ACK:AcknowledgementMessage" minOccurs="1" maxOccurs="1"/>
+<xs:element  ref="F25:EnergyTimeSeriesMessage" minOccurs="1" maxOccurs="1"/>
+</xs:choice> </xs:complexType>
+</xs:schema>
+ 

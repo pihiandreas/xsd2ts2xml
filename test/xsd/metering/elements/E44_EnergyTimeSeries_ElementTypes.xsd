@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:metering:E44_EnergyTimeSeries:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:metering:E44_EnergyTimeSeries:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="EnergyTimeSeries_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ObservationPeriodTimeSeriesPeriod" type="rsm:ObservationPeriodTimeSeriesPeriod_E44_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ProductIncludedProductCharacteristic" type="rsm:ProductIncludedProductCharacteristic_E44_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MPDetailMeasurementMeteringPointCharacteristic" type="rsm:MPDetailMeasurementMeteringPointCharacteristic_E44_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_E44_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InAreaUsedDomainLocation" type="rsm:InAreaUsedDomainLocation_E44_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OutAreaUsedDomainLocation" type="rsm:OutAreaUsedDomainLocation_E44_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ObservationIntervalObservationPeriod" type="rsm:ObservationIntervalObservationPeriod_E44_Type" minOccurs="1" maxOccurs="unbounded"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ObservationPeriodTimeSeriesPeriod_E44_Type">
+<xsd:sequence>
+<xsd:element name="ResolutionDuration" type="rsm:ResolutionDuration_S25_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="End" type="rsm:End_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductIncludedProductCharacteristic_E44_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S18_5_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="UnitType" type="rsm:UnitType_S6_5_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MPDetailMeasurementMeteringPointCharacteristic_E44_Type">
+<xsd:sequence>
+<xsd:element name="MeteringPointType" type="rsm:MeteringPointType_S3_5_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_E44_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InAreaUsedDomainLocation_E44_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="OutAreaUsedDomainLocation_E44_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ObservationIntervalObservationPeriod_E44_Type">
+<xsd:sequence>
+<xsd:element name="Sequence" type="rsm:Sequence_I6_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Values" type="rsm:Values_E44_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Values_E44_Type">
+<xsd:sequence>
+<xsd:element name="EnergyQuantity" type="rsm:EnergyQuantity_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="DeltaQuantity" type="rsm:DeltaQuantity_F8_6_Required_Negative_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

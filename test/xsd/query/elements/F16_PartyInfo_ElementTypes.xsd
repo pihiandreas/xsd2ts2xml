@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F16_PartyInfo:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:query:F16_PartyInfo:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="PartyInfo_Type">
+<xsd:sequence>
+<xsd:element name="AuthorizationPeriod" type="rsm:AuthorizationPeriod_F16_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AuthorizationPeriod_F16_Type">
+<xsd:sequence>
+<xsd:element name="Start" type="rsm:Start_DT_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PartyIdentification" type="rsm:PartyIdentification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PartyType" type="rsm:PartyType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="OrganizationStatus" type="rsm:OrganizationStatus_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PartyId" type="rsm:PartyId_S16_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="PartyName" type="rsm:PartyName_S200_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InvoicingChannel" type="rsm:InvoicingChannel_S4_NFI_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ConsolidateInvoicing" type="rsm:ConsolidateInvoicing_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Contact" type="rsm:Contact_F16_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="InvoicingAddress" type="rsm:InvoicingAddress_F16_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="ElectronicInvoicingAddress" type="rsm:ElectronicInvoicingAddress_F16_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BankInfo" type="rsm:BankInfo_F16_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ConsumerInvolvedCustomerAddress" type="rsm:ConsumerInvolvedCustomerAddress_F16_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Contact_F16_Type">
+<xsd:sequence>
+<xsd:element name="ContactType" type="rsm:ContactType_S4_NFI_4_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="GivenName" type="rsm:GivenName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FamilyName" type="rsm:FamilyName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Communication" type="rsm:Communication_F16_Type" minOccurs="1" maxOccurs="2"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoicingAddress_F16_Type">
+<xsd:sequence>
+<xsd:element name="InvoicingAddressType" type="rsm:InvoicingAddressType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CareOf" type="rsm:CareOf_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Pobox" type="rsm:Pobox_S15_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_3_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ElectronicInvoicingAddress_F16_Type">
+<xsd:sequence>
+<xsd:element name="Target" type="rsm:Target_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ElectronicInvoicingAddress" type="rsm:ElectronicInvoicingAddress_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MediatorIdentification" type="rsm:MediatorIdentification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="BankInfo_F16_Type">
+<xsd:sequence>
+<xsd:element name="IBAN" type="rsm:IBAN_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="BankName" type="rsm:BankName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="SWIFT" type="rsm:SWIFT_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsumerInvolvedCustomerAddress_F16_Type">
+<xsd:sequence>
+<xsd:element name="CareOf" type="rsm:CareOf_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Pobox" type="rsm:Pobox_S15_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_3_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Communication_F16_Type">
+<xsd:sequence>
+<xsd:element name="CommunicationChannel" type="rsm:CommunicationChannel_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CompleteNumber" type="rsm:CompleteNumber_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

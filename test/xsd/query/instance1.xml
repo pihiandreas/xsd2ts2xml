@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:PartyInfoRequestMessage xmlns:elm="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:elements:v1"
+ xmlns:pec="urn:fi:Datahub:mif:common:PEC_ProcessEnergyContext:elements:v1"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:v1"
+ xmlns:hdr="urn:fi:Datahub:mif:common:HDR_Header:elements:v1"
+ xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:fi:Datahub:mif:query:F17_PartyInfoRequest:v1 file:/Volumes/astor_data/senrgi/datahub/WBS%201.16.37%20External%20Message%20Specification%20(proposed%202.3.4.0)%2020241007/query/F17_PartyInfoRequest.xsd" wsu:Id="ID000">
+    <rsm:PartyInfoRequest>
+        <rsm:Header>
+            <hdr:Identification>Identification0</hdr:Identification>
+            <hdr:DocumentType>ACK</hdr:DocumentType>
+            <hdr:Creation>2006-05-04T18:13:51.0</hdr:Creation>
+            <hdr:PhysicalSenderEnergyParty>
+                <hdr:Identification schemeAgencyIdentifier="9">Identificatio</hdr:Identification>
+            </hdr:PhysicalSenderEnergyParty>
+            <hdr:JuridicalSenderEnergyParty>
+                <hdr:Identification schemeAgencyIdentifier="9">Identificatio</hdr:Identification>
+            </hdr:JuridicalSenderEnergyParty>
+            <hdr:JuridicalRecipientEnergyParty>
+                <hdr:Identification schemeAgencyIdentifier="9">Identificatio</hdr:Identification>
+            </hdr:JuridicalRecipientEnergyParty>
+            <hdr:PhysicalRecipientEnergyParty>
+                <hdr:Identification schemeAgencyIdentifier="9">Identificatio</hdr:Identification>
+            </hdr:PhysicalRecipientEnergyParty>
+            <hdr:SenderRoutingInformation>SenderRoutingInformation0</hdr:SenderRoutingInformation>
+            <hdr:OriginalBusinessDocumentReference>OriginalBusinessDocumentReference0</hdr:OriginalBusinessDocumentReference>
+            <hdr:MessageNumber>500000</hdr:MessageNumber>
+            <hdr:MessagesTotal>500000</hdr:MessagesTotal>
+            <hdr:RegistrationTimestamp>2006-05-04T18:13:51.0</hdr:RegistrationTimestamp>
+        </rsm:Header>
+        <rsm:ProcessEnergyContext>
+            <pec:EnergyBusinessProcess>DH-111-1</pec:EnergyBusinessProcess>
+            <pec:EnergyBusinessProcessRole>DDM</pec:EnergyBusinessProcessRole>
+            <pec:EnergyIndustryClassification>23</pec:EnergyIndustryClassification>
+        </rsm:ProcessEnergyContext>
+        <rsm:Transaction>
+            <elm:PartyInfo>
+                <elm:PartyIdentification schemeAgencyIdentifier="9">PartyIdentifi</elm:PartyIdentification>
+            </elm:PartyInfo>
+            <elm:PartyInfo>
+                <elm:PartyIdentification schemeAgencyIdentifier="9">PartyIdentifi</elm:PartyIdentification>
+            </elm:PartyInfo>
+            <elm:PartyType listAgencyIdentifier="NFI">AS01</elm:PartyType>
+        </rsm:Transaction>
+    </rsm:PartyInfoRequest>
+</rsm:PartyInfoRequestMessage>

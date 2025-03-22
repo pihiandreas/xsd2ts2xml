@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:masterdata:F04_MasterDataContractEvent:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="MasterDataContractEvent_Type">
+<xsd:sequence>
+<xsd:element name="StartOfOccurrence" type="rsm:StartOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="EndOfOccurrence" type="rsm:EndOfOccurrence_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentReference" type="rsm:OriginalBusinessDocumentReference_S36_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OriginalBusinessDocumentSender" type="rsm:OriginalBusinessDocumentSender_S13_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Description" type="rsm:Description_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="TransferContractNeeded" type="rsm:TransferContractNeeded_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ContractReason" type="rsm:ContractReason_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ContractConfirm" type="rsm:ContractConfirm_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointOfContract" type="rsm:MeteringPointOfContract_F04_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MeteringGridAreaUsedDomainLocation" type="rsm:MeteringGridAreaUsedDomainLocation_F04_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="MasterDataContract" type="rsm:MasterDataContract_F04_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringPointOfContract_F04_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S90_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MeteringGridAreaUsedDomainLocation_F04_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_305_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MasterDataContract_F04_Type">
+<xsd:sequence>
+<xsd:element name="ContactType" type="rsm:ContactType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Identification" type="rsm:Identification_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ContractType" type="rsm:ContractType_S3_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="DeliveryContract" type="rsm:DeliveryContract_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="TimeLimited" type="rsm:TimeLimited_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FixedContractStart" type="rsm:FixedContractStart_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FixedContractEnd" type="rsm:FixedContractEnd_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="InvoicingMethod" type="rsm:InvoicingMethod_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="NoticeBasis" type="rsm:NoticeBasis_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="NoticeDays" type="rsm:NoticeDays_I4_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="NoticePeriod" type="rsm:NoticePeriod_F04_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Priority" type="rsm:Priority_S1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InvoicingChannel" type="rsm:InvoicingChannel_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="TaxCategory" type="rsm:TaxCategory_S1_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ProductData" type="rsm:ProductData_F04_Type" minOccurs="0" maxOccurs="unbounded"/>
+<xsd:element name="CustomerNote" type="rsm:CustomerNote_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Contact" type="rsm:Contact_F04_Type" minOccurs="0" maxOccurs="unbounded">
+    <xsd:unique name="uniqueContactCommunicationChannel">
+     <xsd:selector xpath="rsm:ContractCommunication"/>
+     <xsd:field xpath="rsm:CommunicationChannel"/>
+    </xsd:unique>
+   </xsd:element>
+<xsd:element name="InvoicingAddress" type="rsm:InvoicingAddress_F04_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ElectronicInvoiceAddressDetails" type="rsm:ElectronicInvoiceAddressDetails_F04_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="OtherInvoicingAddresses" type="rsm:OtherInvoicingAddresses_F04_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="SupplierOfContract" type="rsm:SupplierOfContract_F04_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ConsumerInvolvedCustomerParty" type="rsm:ConsumerInvolvedCustomerParty_F04_Type" minOccurs="0" maxOccurs="unbounded">
+<xsd:unique name="uniqueConsumerCommunicationChannel">
+<xsd:selector xpath="rsm:CustomerCommunication"/>
+<xsd:field xpath="rsm:CommunicationChannel"/>
+</xsd:unique>
+</xsd:element>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="NoticePeriod_F04_Type">
+<xsd:sequence>
+<xsd:element name="NoticeStart" type="rsm:NoticeStart_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="NoticeEnd" type="rsm:NoticeEnd_DT_Optional_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ProductData_F04_Type">
+<xsd:sequence>
+<xsd:element name="ProductCode" type="rsm:ProductCode_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Contact_F04_Type">
+<xsd:sequence>
+<xsd:element name="ContactType" type="rsm:ContactType_S4_NFI_2_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="GivenName" type="rsm:GivenName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FamilyName" type="rsm:FamilyName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ContractCommunication" type="rsm:ContractCommunication_F04_Type" minOccurs="0" maxOccurs="2"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="InvoicingAddress_F04_Type">
+<xsd:sequence>
+<xsd:element name="CareOf" type="rsm:CareOf_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Pobox" type="rsm:Pobox_S15_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ElectronicInvoiceAddressDetails_F04_Type">
+<xsd:sequence>
+<xsd:element name="ElectronicInvoiceTargetId" type="rsm:ElectronicInvoiceTargetId_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="ElectronicInvoiceAddress" type="rsm:ElectronicInvoiceAddress_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="ElectronicInvoiceRouter" type="rsm:ElectronicInvoiceRouter_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="OtherInvoicingAddresses_F04_Type">
+<xsd:sequence>
+<xsd:element name="AddressType" type="rsm:AddressType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Address" type="rsm:Address_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SupplierOfContract_F04_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S13_9_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsumerInvolvedCustomerParty_F04_Type">
+<xsd:sequence>
+<xsd:element name="Identification" type="rsm:Identification_S50_260_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="IdentificationType" type="rsm:IdentificationType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CustomerType" type="rsm:CustomerType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CustomerSubType" type="rsm:CustomerSubType_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="InformationRestriction" type="rsm:InformationRestriction_S1_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Language" type="rsm:Language_S2_5_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Name" type="rsm:Name_S200_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="GivenName" type="rsm:GivenName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MiddleName" type="rsm:MiddleName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FamilyName" type="rsm:FamilyName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="DateOfBirth" type="rsm:DateOfBirth_D_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="AdditionalCode" type="rsm:AdditionalCode_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CustomerCommunication" type="rsm:CustomerCommunication_F04_Type" minOccurs="0" maxOccurs="2"/>
+<xsd:element name="ConsumerInvolvedCustomerAddress" type="rsm:ConsumerInvolvedCustomerAddress_F04_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ContractCommunication_F04_Type">
+<xsd:sequence>
+<xsd:element name="CommunicationChannel" type="rsm:CommunicationChannel_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CompleteNumber" type="rsm:CompleteNumber_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="CustomerCommunication_F04_Type">
+<xsd:sequence>
+<xsd:element name="CommunicationChannel" type="rsm:CommunicationChannel_S4_NFI_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CompleteNumber" type="rsm:CompleteNumber_S90_Required_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ConsumerInvolvedCustomerAddress_F04_Type">
+<xsd:sequence>
+<xsd:element name="CareOf" type="rsm:CareOf_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="Pobox" type="rsm:Pobox_S15_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Required_Type" minOccurs="1" maxOccurs="1"/>
+<xsd:element name="CountryCode" type="rsm:CountryCode_S2_5_Type" minOccurs="1" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>

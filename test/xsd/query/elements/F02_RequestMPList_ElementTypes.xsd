@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:rsm="urn:fi:Datahub:mif:query:F02_RequestMPList:elements:v1"
+ targetNamespace="urn:fi:Datahub:mif:query:F02_RequestMPList:elements:v1" 
+ elementFormDefault="qualified" attributeFormDefault="unqualified"  version="2.3.4.0">
+<xsd:include schemaLocation="../../common/DataTypes.xsd"/>
+<xsd:complexType name="RequestMPList_Type">
+<xsd:sequence>
+<xsd:element name="AddressFreeForm" type="rsm:AddressFreeForm_S150_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="StreetName" type="rsm:StreetName_S90_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="BuildingNumber" type="rsm:BuildingNumber_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="FloorIdentification" type="rsm:FloorIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RoomIdentification" type="rsm:RoomIdentification_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Postcode" type="rsm:Postcode_S10_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="CityName" type="rsm:CityName_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeterIdentification" type="rsm:MeterIdentification_S50_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="Identification" type="rsm:Identification_S90_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointType" type="rsm:MeteringPointType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="MeteringPointSubType" type="rsm:MeteringPointSubType_S4_NFI_Type" minOccurs="0" maxOccurs="1"/>
+<xsd:element name="RelatedMeteringPoint" type="rsm:RelatedMeteringPoint_S90_9_Optional_Type" minOccurs="0" maxOccurs="1"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
